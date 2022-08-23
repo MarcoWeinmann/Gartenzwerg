@@ -75,4 +75,7 @@ dependencies {
 
     // Moshi
     implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
+
+    //Selbst hinzugefügt
+    'com.google.android.material:material:1.0.0'
 }

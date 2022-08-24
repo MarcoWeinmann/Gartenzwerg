@@ -1,4 +1,4 @@
-package de.syntaxinstitut.Gartenzwerg.ui.one
+package de.syntaxinstitut.Gartenzwerg.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,7 @@ import de.syntaxinstitut.Gartenzwerg.databinding.FragmentOneBinding
 /**
  * Fragment 1
  */
-class OneFragment : Fragment(R.layout.fragment_one) {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
     /* -------------------- Klassen Variablen -------------------- */
 
@@ -22,7 +22,7 @@ class OneFragment : Fragment(R.layout.fragment_one) {
     private lateinit var binding: FragmentOneBinding
 
     /** Das ViewModel zu diesem Fragment */
-    private val viewModel: OneViewModel by viewModels()
+    private val viewModel: HomeViewModel by viewModels()
 
     /* -------------------- Lifecycle -------------------- */
 
@@ -38,7 +38,7 @@ class OneFragment : Fragment(R.layout.fragment_one) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_one, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
         return binding.root
     }

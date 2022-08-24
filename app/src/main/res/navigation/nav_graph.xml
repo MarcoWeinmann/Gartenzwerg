@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/oneFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/oneFragment"
-        android:name="de.syntaxinstitut.Gartenzwerg.ui.one.OneFragment"
-        android:label="OneFragment"
-        tools:layout="@layout/fragment_one">
+        android:id="@+id/homeFragment"
+        android:name="de.syntaxinstitut.Gartenzwerg.ui.home.HomeFragment"
+        android:label="homeFragment"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_oneFragment_to_twoFragment"
             app:destination="@id/twoFragment" />
@@ -19,4 +19,13 @@
         android:name="de.syntaxinstitut.Gartenzwerg.ui.two.TwoFragment"
         android:label="TwoFragment"
         tools:layout="@layout/fragment_two"/>
+    <fragment
+        android:id="@+id/kalenderFragment"
+        android:name="de.syntaxinstitut.Gartenzwerg.ui.kalender.KalenderFragment"
+        android:label="fragment_kalender"
+        tools:layout="@layout/fragment_kalender" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="de.syntaxinstitut.Gartenzwerg.ui.login.Login2Fragment"
+        android:label="LoginFragment" />
 </navigation>

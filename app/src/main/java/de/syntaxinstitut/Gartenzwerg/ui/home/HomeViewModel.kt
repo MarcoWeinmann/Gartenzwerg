@@ -1,4 +1,4 @@
-package de.syntaxinstitut.Gartenzwerg.ui.one
+package de.syntaxinstitut.Gartenzwerg.ui.home
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 /**
  * Das ViewModel des One Fragments
  */
-class OneViewModel(application: Application) : AndroidViewModel(application) {
+class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
     /* -------------------- Klassen Variablen -------------------- */
 	

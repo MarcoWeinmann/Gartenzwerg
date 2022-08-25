@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <data>
-
-    </data>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/ivHomeBG"
+            android:id="@+id/ivDetailBG"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="false"
@@ -37,12 +36,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/ButtonBurgerHome"
+            android:id="@+id/ButtonBurgerDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
             android:clickable="true"
-            android:contentDescription="ButtonBurgerHome"
+            android:contentDescription="BurgerMenu"
             app:backgroundTint="@color/buttonlila"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar"
             app:layout_constraintStart_toStartOf="@+id/toolbar"
@@ -50,9 +50,10 @@
             app:srcCompat="@drawable/baseline_menu_black_24dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/ButtonProfilHome"
+            android:id="@+id/ButtonProfilDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:clickable="true"
             android:contentDescription="Profil"
@@ -63,19 +64,18 @@
             app:srcCompat="@drawable/baseline_account_circle_black_24dp" />
 
         <TextView
-            android:id="@+id/tvHome"
+            android:id="@+id/tvDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="96dp"
-            android:text="Home"
+            android:layout_marginTop="8dp"
+            android:text="Detail"
             android:textColor="@color/black"
             android:textSize="34sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/ButtonProfilHome"
-            app:layout_constraintHorizontal_bias="0.98"
-            app:layout_constraintStart_toEndOf="@+id/ButtonBurgerHome"
-            app:layout_constraintTop_toTopOf="@+id/toolbar" />
+            app:layout_constraintEnd_toStartOf="@+id/ButtonProfilDetail"
+            app:layout_constraintStart_toEndOf="@+id/ButtonBurgerDetail"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+</FrameLayout>

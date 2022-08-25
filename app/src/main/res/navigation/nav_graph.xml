@@ -9,16 +9,7 @@
         android:id="@+id/homeFragment"
         android:name="de.syntaxinstitut.gartenzwerg.ui.home.HomeFragment"
         android:label="homeFragment"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_oneFragment_to_twoFragment"
-            app:destination="@id/twoFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/twoFragment"
-        android:name="de.syntaxinstitut.gartenzwerg.ui.two.TwoFragment"
-        android:label="TwoFragment"
-        tools:layout="@layout/fragment_two"/>
+        tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/kalenderFragment"
         android:name="de.syntaxinstitut.gartenzwerg.ui.kalender.KalenderFragment"
@@ -33,4 +24,14 @@
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.ProfilFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>

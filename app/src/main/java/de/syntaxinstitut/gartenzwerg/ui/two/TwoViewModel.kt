@@ -1,4 +1,4 @@
-package de.syntaxinstitut.Gartenzwerg.ui.two
+package de.syntaxinstitut.gartenzwerg.ui.two
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

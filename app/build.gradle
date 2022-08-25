@@ -10,7 +10,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "Gartenzwerg"
+        applicationId "de.syntaxinstitut.gartenzwerg"
         minSdk 21
         targetSdk 32
         versionCode 1

@@ -1,9 +1,9 @@
-package de.syntaxinstitut.Gartenzwerg
+package de.syntaxinstitut.gartenzwerg
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import de.syntaxinstitut.Gartenzwerg.databinding.ActivityMainBinding
+import de.syntaxinstitut.gartenzwerg.databinding.ActivityMainBinding
 
 /**
  * Main Activity, dient als Einstiegspunkt für die App

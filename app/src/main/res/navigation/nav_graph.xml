@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="de.syntaxinstitut.Gartenzwerg.ui.home.HomeFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.ui.home.HomeFragment"
         android:label="homeFragment"
         tools:layout="@layout/fragment_home">
         <action
@@ -16,16 +16,21 @@
     </fragment>
     <fragment
         android:id="@+id/twoFragment"
-        android:name="de.syntaxinstitut.Gartenzwerg.ui.two.TwoFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.ui.two.TwoFragment"
         android:label="TwoFragment"
         tools:layout="@layout/fragment_two"/>
     <fragment
         android:id="@+id/kalenderFragment"
-        android:name="de.syntaxinstitut.Gartenzwerg.ui.kalender.KalenderFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.ui.kalender.KalenderFragment"
         android:label="fragment_kalender"
         tools:layout="@layout/fragment_kalender" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="de.syntaxinstitut.Gartenzwerg.ui.login.Login2Fragment"
-        android:label="LoginFragment" />
+        android:name="de.syntaxinstitut.gartenzwerg.ui.login.Login2Fragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

@@ -111,7 +111,7 @@ class Datasource {
 
             Pflanzen(
                 "Zwiebel",
-                R.drawable.Zwiebel1,
+                R.drawable.zwiebel,
                 "Die (in Österreich, Bayern und Schwaben auch der) Zwiebel (Allium cepa), auch Zwiebellauch, Bolle, Zipolle, Speisezwiebel, Küchenzwiebel, Gartenzwiebel, Sommerzwiebel, Hauszwiebel oder Gemeine Zwiebel genannt, ist eine Pflanzenart aus der Gattung Lauch (Allium)."
 
             )

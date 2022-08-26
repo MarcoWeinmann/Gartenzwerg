@@ -35,7 +35,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/tvDetailText"
                         android:layout_width="354dp"
                         android:layout_height="172dp"
                         android:layout_marginStart="5dp"
@@ -63,7 +63,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:id="@+id/imageView"
+                            android:id="@+id/ivDetail"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/Basilikum1" />
@@ -78,7 +78,7 @@
                         android:textColor="@color/black"
                         android:textSize="34sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@+id/textView"
+                        app:layout_constraintBottom_toTopOf="@+id/tvDetailText"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/cardView2"
                         app:layout_constraintVertical_bias="0.237" />

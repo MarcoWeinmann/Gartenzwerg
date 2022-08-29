@@ -78,7 +78,7 @@
             app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvGemüse"
+            android:id="@+id/rvVeggie"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="@+id/ivHomeBG"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailFragment">
+    tools:context=".ui.detail.DetailFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,7 +66,7 @@
                             android:id="@+id/ivDetail"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/Basilikum1" />
+                            android:src="@drawable/basilikum1" />
                     </androidx.cardview.widget.CardView>
 
                     <TextView

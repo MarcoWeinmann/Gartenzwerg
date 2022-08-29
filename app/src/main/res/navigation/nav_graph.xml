@@ -31,7 +31,7 @@
         tools:layout="@layout/fragment_profil" />
     <fragment
         android:id="@+id/detailFragment"
-        android:name="de.syntaxinstitut.gartenzwerg.DetailFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.ui.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
 </navigation>

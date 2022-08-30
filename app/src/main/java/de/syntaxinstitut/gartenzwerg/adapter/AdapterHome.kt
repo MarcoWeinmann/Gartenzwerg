@@ -2,8 +2,11 @@ package de.syntaxinstitut.gartenzwerg.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.card.MaterialCardView
 import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
+import de.syntaxinstitut.gartenzwerg.databinding.FragmentHomeBinding
 import de.syntaxinstitut.gartenzwerg.databinding.ListItemBinding
 
 class AdapterHome (
@@ -12,6 +15,7 @@ class AdapterHome (
         ) : RecyclerView.Adapter<AdapterHome.ItemViewHolder>(){
 
             class ItemViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root)
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -27,6 +31,9 @@ class AdapterHome (
 
         holder.binding.ivListItem.setImageResource(item.pictureResource)
         holder.binding.tvListItem.text = item.name
+        holder.binding.cvListItem.setOnClickListener{
+            holder.itemView.findNavController().navigate(FragmentHome)
+        }
     }
 
     override fun getItemCount(): Int {

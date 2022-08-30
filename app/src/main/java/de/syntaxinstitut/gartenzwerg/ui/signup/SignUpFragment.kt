@@ -1,4 +1,4 @@
-package de.syntaxinstitut.gartenzwerg.ui.detail
+package de.syntaxinstitut.gartenzwerg.ui.signup
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import de.syntaxinstitut.gartenzwerg.R
 
 
-class DetailFragment : Fragment() {
+class SignUpFragment : Fragment() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,15 +21,10 @@ class DetailFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detail, container, false)
-
-        arguments?.let {
-            id = it.getInt("Id")
-        }
-
+        return inflater.inflate(R.layout.fragment_sign_up, container, false)
     }
+
 
 }

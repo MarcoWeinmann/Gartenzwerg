@@ -1,5 +1,6 @@
 package de.syntaxinstitut.gartenzwerg.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
@@ -8,6 +9,7 @@ import com.google.android.material.card.MaterialCardView
 import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentHomeBinding
 import de.syntaxinstitut.gartenzwerg.databinding.ListItemBinding
+import de.syntaxinstitut.gartenzwerg.ui.home.HomeFragmentDirections
 
 class AdapterHome (
     private val dataset: List<Pflanzen>
@@ -29,10 +31,12 @@ class AdapterHome (
 
         val item = dataset[position]
 
+
+
         holder.binding.ivListItem.setImageResource(item.pictureResource)
         holder.binding.tvListItem.text = item.name
         holder.binding.cvListItem.setOnClickListener{
-            holder.itemView.findNavController().navigate(FragmentHome)
+            holder.itemView.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(name = item.name, bild = item.pictureResource, text = item.text, id = position+1))
         }
     }
 

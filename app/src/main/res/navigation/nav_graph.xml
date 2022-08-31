@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/kalenderFragment"
@@ -21,9 +24,12 @@
         tools:layout="@layout/fragment_kalender" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="de.syntaxinstitut.gartenzwerg.ui.login.Login2Fragment"
-        android:label="LoginFragment"
-        tools:layout="@layout/fragment_login"/>
+        android:name="de.syntaxinstitut.gartenzwerg.ui.login.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profilFragment"
         android:name="de.syntaxinstitut.gartenzwerg.ProfilFragment"
@@ -33,14 +39,22 @@
         android:id="@+id/detailFragment"
         android:name="de.syntaxinstitut.gartenzwerg.ui.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
+        tools:layout="@layout/fragment_detail">
         <argument
             android:name="id"
             app:argType="integer" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="bild"
+            app:argType="integer" />
+        <argument
+            android:name="text"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="de.syntaxinstitut.gartenzwerg.SignUpFragment"
-        android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" />
+        android:name="de.syntaxinstitut.gartenzwerg.ui.signup.SignUpFragment"
+        android:label="SignUpFragment" />
 </navigation>

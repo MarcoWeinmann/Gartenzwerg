@@ -4,5 +4,6 @@ class Pflanzen (
     val name: String,
     val pictureResource: Int,
     val text: String,
-    val id: Int
+    val id: Int,
+    val aussaat: List<IntRange>
     )

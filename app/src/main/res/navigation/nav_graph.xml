@@ -58,5 +58,5 @@
         android:id="@+id/signUpFragment"
         android:name="de.syntaxinstitut.gartenzwerg.ui.signup.SignUpFragment"
         android:label="SignUpFragment"
-        tools:layout="@layout/fragment_sign_up"/>
+        tools:layout="@layout/fragment_sign_up" />
 </navigation>

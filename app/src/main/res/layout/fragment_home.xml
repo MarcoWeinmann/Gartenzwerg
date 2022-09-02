@@ -40,40 +40,27 @@
             android:id="@+id/ButtonBurgerHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
             android:clickable="true"
             android:contentDescription="ButtonBurgerHome"
             app:backgroundTint="@color/buttonlila"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar"
             app:layout_constraintStart_toStartOf="@+id/toolbar"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.571"
             app:srcCompat="@drawable/baseline_menu_black_24dp" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/ButtonProfilHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:clickable="true"
-            android:contentDescription="Profil"
-            app:backgroundTint="@color/buttonlila"
-            app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_account_circle_black_24dp" />
 
         <TextView
             android:id="@+id/tvHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="96dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="8dp"
             android:text="Home"
             android:textColor="@color/black"
             android:textSize="34sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/ButtonProfilHome"
-            app:layout_constraintHorizontal_bias="0.98"
             app:layout_constraintStart_toEndOf="@+id/ButtonBurgerHome"
             app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
@@ -93,8 +80,12 @@
             android:id="@+id/buttonLogOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/white"
             android:text="LogOut"
-            app:layout_constraintEnd_toStartOf="@+id/ButtonProfilHome"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

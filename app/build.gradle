@@ -10,6 +10,10 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdk 32
+        //MaterialKalender
+
+
+
 
     defaultConfig {
         applicationId "de.syntaxinstitut.gartenzwerg"
@@ -85,3 +89,4 @@ dependencies {
     //Selbst hinzugefügt
     'com.google.android.material:material:1.0.0'
 }
+

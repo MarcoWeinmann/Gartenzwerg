@@ -28,27 +28,14 @@
             android:id="@+id/buttonBurgerProfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
             android:clickable="true"
             android:contentDescription="BurgerMenu"
             app:backgroundTint="@color/buttonlila"
             app:layout_constraintStart_toStartOf="@+id/toolbar"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/baseline_menu_black_24dp" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/ButtonProfilProfil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:clickable="true"
-            android:contentDescription="Profil"
-            app:backgroundTint="@color/buttonlila"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_account_circle_black_24dp" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -65,12 +52,12 @@
             android:id="@+id/tvProfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="4dp"
             android:text="Profil"
             android:textColor="@color/black"
             android:textSize="34sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/ButtonProfilProfil"
             app:layout_constraintStart_toEndOf="@+id/buttonBurgerProfil"
             app:layout_constraintTop_toTopOf="parent" />
 

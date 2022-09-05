@@ -3,16 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/kalenderFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="de.syntaxinstitut.gartenzwerg.ui.home.HomeFragment"
         android:label="homeFragment"
         tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
         <action
             android:id="@+id/action_homeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -59,4 +56,13 @@
         android:name="de.syntaxinstitut.gartenzwerg.ui.signup.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/gemueseListeFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.GemueseListeFragment"
+        android:label="fragment_gemuese_liste"
+        tools:layout="@layout/fragment_gemuese_liste">
+        <action
+            android:id="@+id/action_gemueseListeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
 </navigation>

@@ -2,10 +2,6 @@ package de.syntaxinstitut.gartenzwerg
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import de.syntaxinstitut.gartenzwerg.adapter.AdapterHome
-import de.syntaxinstitut.gartenzwerg.data.models.Datasource
-import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
 import de.syntaxinstitut.gartenzwerg.databinding.ActivityMainBinding
 
 /**

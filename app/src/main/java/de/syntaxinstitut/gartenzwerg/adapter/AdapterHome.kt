@@ -1,18 +1,20 @@
 package de.syntaxinstitut.gartenzwerg.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import de.syntaxinstitut.gartenzwerg.GemueseListeFragmentDirections
+import com.google.android.material.card.MaterialCardView
 import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
+import de.syntaxinstitut.gartenzwerg.databinding.FragmentHomeBinding
 import de.syntaxinstitut.gartenzwerg.databinding.ListItemBinding
 import de.syntaxinstitut.gartenzwerg.ui.home.HomeFragmentDirections
 
-class AdapterListe (
+class AdapterHome (
     private val dataset: List<Pflanzen>
 
-        ) : RecyclerView.Adapter<AdapterListe.ItemViewHolder>(){
+        ) : RecyclerView.Adapter<AdapterHome.ItemViewHolder>(){
 
             class ItemViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -34,7 +36,7 @@ class AdapterListe (
         holder.binding.ivListItem.setImageResource(item.pictureResource)
         holder.binding.tvListItem.text = item.name
         holder.binding.cvListItem.setOnClickListener{
-            holder.itemView.findNavController().navigate(GemueseListeFragmentDirections.actionGemueseListeFragmentToDetailFragment(name = item.name, bild = item.pictureResource, text = item.text, id = position+1))
+            holder.itemView.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(name = item.name, bild = item.pictureResource, text = item.text, id = position+1))
         }
     }
 

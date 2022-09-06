@@ -18,7 +18,7 @@
 
 
             <ImageView
-                android:id="@+id/ivHomeBG"
+                android:id="@+id/ivListeBG"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="false"
@@ -28,33 +28,18 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/toolbar"
                 app:srcCompat="@drawable/homescreen_background" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="409dp"
-                android:layout_height="70dp"
-                android:background="@color/apfelgrün"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/ButtonBurgerHome"
+                android:id="@+id/ButtonBurgerListe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="4dp"
                 android:clickable="true"
-                android:contentDescription="ButtonBurgerHome"
+                android:contentDescription="ButtonBurgerListe"
                 app:backgroundTint="@color/buttonlila"
-                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-                app:layout_constraintStart_toStartOf="@+id/toolbar"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.571"
                 app:srcCompat="@drawable/baseline_menu_black_24dp" />
 
             <TextView
@@ -74,10 +59,9 @@
                 android:id="@+id/rvVeggie"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="@+id/ivHomeBG"
+                app:layout_constraintBottom_toBottomOf="@+id/ivListeBG"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar"
                 tools:listitem="@layout/list_item"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2" />

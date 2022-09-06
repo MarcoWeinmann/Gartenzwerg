@@ -1,13 +1,5 @@
 <resources>
     <string name="app_name">Gartenzwerg</string>
-    <string-array name="Gemuese">
-        <item>Basilikum</item>
-        <item>Blumenkohl</item>
-        <item>Bohnen</item>
-        <item>Erbsen</item>
-        <item>Feldsalat</item>
-        <item>Gurke</item>
-    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

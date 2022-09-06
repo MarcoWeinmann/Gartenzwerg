@@ -1,113 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.kalender.KalenderFragment">
 
-    <data>
-
-    </data>
-
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.kalender.KalenderFragment">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+
+        <ImageView
+            android:id="@+id/ivKalenderBG"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:adjustViewBounds="false"
+            android:orientation="vertical"
+            android:rotation="0"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar"
+            app:srcCompat="@drawable/homescreen_background" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="409dp"
+            android:layout_height="70dp"
+            android:background="@color/apfelgrün"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/ButtonBurgerKalender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:contentDescription="BurgerMenu"
+            app:backgroundTint="@color/buttonlila"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_menu_black_24dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/ButtonProfilKalender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:clickable="true"
+            android:contentDescription="Profil"
+            app:backgroundTint="@color/buttonlila"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_account_circle_black_24dp" />
+
+        <TextView
+            android:id="@+id/tvKalender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Kalender"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/ButtonProfilKalender"
+            app:layout_constraintStart_toEndOf="@+id/ButtonBurgerKalender"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="192dp"
+            android:background="@color/apfelgrün"
+            app:layout_constraintEnd_toEndOf="@+id/ivKalenderBG"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="@+id/ivKalenderBG"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="123dp" />
 
 
-            <ImageView
-                android:id="@+id/ivKalenderBG"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="false"
-                android:orientation="vertical"
-                android:rotation="0"
-                android:scaleType="centerCrop"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/toolbar"
-                app:srcCompat="@drawable/homescreen_background" />
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="409dp"
-                android:layout_height="70dp"
-                android:background="@color/apfelgrün"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/ButtonBurgerKalender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="4dp"
-                android:clickable="true"
-                android:contentDescription="BurgerMenu"
-                app:backgroundTint="@color/buttonlila"
-                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/baseline_menu_black_24dp" />
-
-            <TextView
-                android:id="@+id/tvKalender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
-                android:layout_marginTop="16dp"
-                android:text="Kalender"
-                android:textColor="@color/black"
-                android:textSize="34sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/ButtonBurgerKalender"
-                app:layout_constraintTop_toTopOf="@+id/toolbar" />
-
-            <CalendarView
-                android:id="@+id/calendarView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="192dp"
-                android:background="@color/apfelgrün"
-                app:layout_constraintEnd_toEndOf="@+id/ivKalenderBG"
-                app:layout_constraintHorizontal_bias="0.491"
-                app:layout_constraintStart_toStartOf="@+id/ivKalenderBG"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-                android:layout_width="191dp"
-                android:layout_height="52dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="160dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.496"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar">
-
-                <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:inputType="none"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
-                    android:text="Gemüse-Sorten" />
-
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </FrameLayout>
-</layout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
 

@@ -22,13 +22,24 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/toolbar"
             app:srcCompat="@drawable/homescreen_background" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="409dp"
-            android:layout_height="70dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvVeggie"
+            android:layout_width="match_parent"
+            android:layout_height="656dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:spanCount="2"
+            tools:listitem="@layout/list_item" />
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbarHome"
+            android:layout_width="411dp"
+            android:layout_height="73dp"
             android:background="@color/apfelgrün"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
@@ -37,65 +48,41 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/ButtonBurgerHome"
+            android:id="@+id/buttonBurgerHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
             android:clickable="true"
-            android:contentDescription="ButtonBurgerHome"
             app:backgroundTint="@color/buttonlila"
-            app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-            app:layout_constraintStart_toStartOf="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/baseline_menu_black_24dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/ButtonProfilHome"
+            android:id="@+id/buttonLogOutHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
             android:clickable="true"
-            android:contentDescription="Profil"
             app:backgroundTint="@color/buttonlila"
-            app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="@+id/materialToolbarHome"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_account_circle_black_24dp" />
+            app:srcCompat="@drawable/logout_black_24dp" />
 
         <TextView
             android:id="@+id/tvHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="96dp"
+            android:layout_marginStart="96dp"
+            android:layout_marginTop="4dp"
             android:text="Home"
             android:textColor="@color/black"
             android:textSize="34sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/ButtonProfilHome"
-            app:layout_constraintHorizontal_bias="0.98"
-            app:layout_constraintStart_toEndOf="@+id/ButtonBurgerHome"
-            app:layout_constraintTop_toTopOf="@+id/toolbar" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvVeggie"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/ivHomeBG"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            tools:listitem="@layout/list_item"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"/>
-
-        <Button
-            android:id="@+id/buttonLogOut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LogOut"
-            app:layout_constraintEnd_toStartOf="@+id/ButtonProfilHome"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/buttonBurgerHome"
+            app:layout_constraintTop_toTopOf="@+id/ivHomeBG" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

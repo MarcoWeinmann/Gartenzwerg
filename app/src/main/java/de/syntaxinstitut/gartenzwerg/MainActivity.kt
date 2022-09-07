@@ -1,6 +1,9 @@
 package de.syntaxinstitut.gartenzwerg
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import de.syntaxinstitut.gartenzwerg.adapter.AdapterHome
@@ -32,5 +35,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
+
     }
 }
+
+

@@ -12,6 +12,16 @@
         android:layout_height="match_parent"
         tools:context=".ui.detail.DetailFragment">
 
+        <ImageView
+            android:id="@+id/ivBGDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="false"
+            android:orientation="vertical"
+            android:rotation="0"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/homescreen_background" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

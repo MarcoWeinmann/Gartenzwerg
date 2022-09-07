@@ -52,19 +52,22 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         binding.rvVeggie.setHasFixedSize(true)
 
-        binding.buttonLogOut.setOnClickListener{
-            authviewmodel.logout()
+      //  binding.buttonLogOut.setOnClickListener{
+        //    authviewmodel.logout()
+    //}
+
+
 
         }
 
-        authviewmodel.currentUser.observe(
+  /*      authviewmodel.currentUser.observe(
             viewLifecycleOwner,
             Observer{
                 if (it == null) {
                     findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
                 }
             }
-        )
+        )*/
 
         /* -------------------- UI-Interaktionen -------------------- */
 
@@ -76,4 +79,4 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
 
     }
-}
+

@@ -7,5 +7,19 @@
         <item>Erbsen</item>
         <item>Feldsalat</item>
         <item>Gurke</item>
+        <item>Karotte</item>
+        <item>Kartoffel</item>
+        <item>Knoblauch</item>
+        <item>Kohlrabi</item>
+        <item>Lauch</item>
+        <item>Petersilie</item>
+        <item>Radieschen</item>
+        <item>Schnittlauch</item>
+        <item>Spargel</item>
+        <item>Tomate</item>
+        <item>Zucchini</item>
+        <item>Zwiebel</item>
+        <item>Chilli</item>
+
     </string-array>
 </resources>

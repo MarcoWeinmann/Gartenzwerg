@@ -11,13 +11,12 @@ import de.syntaxinstitut.gartenzwerg.databinding.FragmentHomeBinding
 import de.syntaxinstitut.gartenzwerg.databinding.ListItemBinding
 import de.syntaxinstitut.gartenzwerg.ui.home.HomeFragmentDirections
 
-class AdapterHome (
+class AdapterHome(
     private val dataset: List<Pflanzen>
 
-        ) : RecyclerView.Adapter<AdapterHome.ItemViewHolder>(){
+) : RecyclerView.Adapter<AdapterHome.ItemViewHolder>() {
 
-            class ItemViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root)
-
+    class ItemViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root)
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -35,8 +34,20 @@ class AdapterHome (
 
         holder.binding.ivListItem.setImageResource(item.pictureResource)
         holder.binding.tvListItem.text = item.name
-        holder.binding.cvListItem.setOnClickListener{
-            holder.itemView.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(name = item.name, bild = item.pictureResource, text = item.text, id = position+1))
+        holder.binding.cvListItem.setOnClickListener {
+            holder.itemView.findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToDetailFragment(
+                    name = item.name,
+                    bild = item.pictureResource,
+                    text = item.text,
+                    id = position + 1,
+                    aussaatStart = item.aussaatZeitStart,
+                    aussaatEnde = item.aussaatZeitEnde,
+                    ernteStart = item.ernteZeitStart,
+                    ernteEnde = item.ernteZeitEnde,
+                    pflanzenProQm = item.pflanzenProQMeter
+                )
+            )
         }
     }
 
@@ -44,4 +55,4 @@ class AdapterHome (
         return dataset.size
     }
 
-        }
+}

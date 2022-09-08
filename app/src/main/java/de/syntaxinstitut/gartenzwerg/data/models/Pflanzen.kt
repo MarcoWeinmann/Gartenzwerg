@@ -5,5 +5,9 @@ class Pflanzen (
     val pictureResource: Int,
     val text: String,
     val id: Int,
-    val aussaat: List<IntRange>
+    val aussaatZeitStart: Int,
+    val aussaatZeitEnde: Int,
+    val ernteZeitStart: Int,
+    val ernteZeitEnde: Int,
+    val pflanzenProQMeter: Int
     )

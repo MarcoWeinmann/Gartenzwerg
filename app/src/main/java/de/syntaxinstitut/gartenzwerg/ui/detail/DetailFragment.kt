@@ -20,6 +20,12 @@ class DetailFragment : Fragment() {
     private var bild = 0
     private var text = ""
 
+    private var saatStart: String = ""
+    private var saatEnde: String = ""
+    private var ernteStart: String = ""
+    private var ernteEnde: String = ""
+    private var pflanzenProQm: String = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +33,12 @@ class DetailFragment : Fragment() {
            name = arguments!!.getString("name").toString()
            text = arguments!!.getString("text").toString()
            bild = arguments!!.getInt("bild")
+
+           saatStart = arguments!!.getInt("aussaatStart").toString()
+           saatEnde = arguments!!.getInt("aussaatEnde").toString()
+           ernteStart = arguments!!.getInt("ernteStart").toString()
+           ernteEnde = arguments!!.getInt("ernteEnde").toString()
+           pflanzenProQm = arguments!!.getInt("pflanzenProQm").toString()
        }
 
     }
@@ -48,6 +60,22 @@ class DetailFragment : Fragment() {
         binding.tvDetailText.text = text
         binding.ivDetail.setImageResource(bild)
         binding.tvDetailName.text = name
+
+        binding.tvDetailMeter.text = pflanzenProQm
+
+        if (saatStart == saatEnde){
+            binding.tvDetailAussaat.text = "$saatStart"
+        }else{
+            binding.tvDetailAussaat.text = "$saatStart-$saatEnde"
+        }
+
+        if (ernteStart == ernteEnde){
+            binding.tvDetailErnte.text = "$ernteStart"
+        }else{
+            binding.tvDetailErnte.text = "$ernteStart-$ernteEnde"
+        }
+
+
 
     }
 

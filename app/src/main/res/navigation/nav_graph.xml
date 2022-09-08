@@ -53,6 +53,21 @@
         <argument
             android:name="text"
             app:argType="string" />
+        <argument
+            android:name="aussaatStart"
+            app:argType="integer" />
+        <argument
+            android:name="aussaatEnde"
+            app:argType="integer" />
+        <argument
+            android:name="ernteStart"
+            app:argType="integer" />
+        <argument
+            android:name="ernteEnde"
+            app:argType="integer" />
+        <argument
+            android:name="pflanzenProQm"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"

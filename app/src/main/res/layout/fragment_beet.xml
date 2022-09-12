@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivBeetBG"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="false"
+                android:orientation="vertical"
+                android:rotation="0"
+                android:scaleType="centerCrop"
+                android:src="@drawable/homescreen_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/ToolbarBeet"
+                android:layout_width="match_parent"
+                android:layout_height="73dp"
+                android:background="@color/apfelgrün"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/buttonBurgerBeet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:clickable="true"
+                android:src="@drawable/baseline_menu_black_24dp"
+                app:backgroundTint="@color/buttonlila"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/buttonLogoutBeet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:clickable="true"
+                android:src="@drawable/logout_black_24dp"
+                app:backgroundTint="@color/buttonlila"
+                app:layout_constraintEnd_toEndOf="@+id/ToolbarBeet"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvBeet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Mein Beet"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/buttonLogoutBeet"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toEndOf="@+id/buttonBurgerBeet"
+                app:layout_constraintTop_toTopOf="@+id/ToolbarBeet" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvBeet"
+                android:layout_width="356dp"
+                android:layout_height="248dp"
+                android:layout_marginTop="36dp"
+                app:cardBackgroundColor="@color/apfelgrün"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ToolbarBeet"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvBeetName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="28dp"
+                        android:text="Name:"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvBeetLänge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="28dp"
+                        android:text="Länge:"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvBeetName" />
+
+                    <TextView
+                        android:id="@+id/tvBeetBreite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="28dp"
+                        android:text="Breite:"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvBeetLänge" />
+
+                    <TextView
+                        android:id="@+id/tvBeetPflanze"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="28dp"
+                        android:text="Pflanze:"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvBeetBreite" />
+
+                    <EditText
+                        android:id="@+id/evBeetName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.507"
+                        app:layout_constraintStart_toEndOf="@+id/tvBeetName"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/evBeetLaenge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tvBeetLänge"
+                        app:layout_constraintTop_toBottomOf="@+id/evBeetName" />
+
+                    <EditText
+                        android:id="@+id/evBeetBreite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.523"
+                        app:layout_constraintStart_toEndOf="@+id/tvBeetBreite"
+                        app:layout_constraintTop_toBottomOf="@+id/evBeetLaenge" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/buttonBeetErstellen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:backgroundTint="@color/buttonlila"
+                android:shadowColor="@color/black"
+                android:text="Beet erstellen"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvBeet"
+                app:rippleColor="@color/buttonlila"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

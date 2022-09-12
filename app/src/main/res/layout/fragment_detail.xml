@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="20dp"
@@ -44,7 +44,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="2dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -54,10 +56,8 @@
                             android:id="@+id/tvDetailText"
                             android:layout_width="354dp"
                             android:layout_height="172dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="35dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginBottom="15dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="8dp"
                             android:text="Das Basilikum (Ocimum basilicum), auch Basilie, Basilienkraut oder Königskraut genannt, ist eine Gewürzpflanze aus der gleichnamigen Gattung Basilikum (Ocimum) in der Familie der Lippenblütler."
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -65,16 +65,18 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView3"
                             app:layout_constraintVertical_bias="0.985" />
 
-                        <androidx.cardview.widget.CardView
+                        <com.google.android.material.card.MaterialCardView
                             android:id="@+id/cardView2"
                             android:layout_width="0dp"
                             android:layout_height="300dp"
                             android:layout_marginStart="20dp"
                             android:layout_marginTop="55dp"
                             android:layout_marginEnd="20dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp"
                             app:cardCornerRadius="8dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +87,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/basilikum1" />
-                        </androidx.cardview.widget.CardView>
+                        </com.google.android.material.card.MaterialCardView>
 
                         <TextView
                             android:id="@+id/tvDetailName"
@@ -100,86 +102,147 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:id="@+id/tvDetailAussaat"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="36dp"
-                            android:layout_marginTop="28dp"
-                            android:text="3-5"
-                            android:textColor="@color/black"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
-
-                        <TextView
-                            android:id="@+id/tvDetailErnte"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="68dp"
-                            android:layout_marginTop="28dp"
-                            android:text="7-9"
-                            android:textColor="@color/black"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toEndOf="@+id/tvDetailAussaat"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
-
-                        <TextView
-                            android:id="@+id/tvDetailMeter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="100dp"
-                            android:layout_marginTop="28dp"
-                            android:text="30"
-                            android:textColor="@color/black"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toEndOf="@+id/tvDetailErnte"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
-
-                        <TextView
-                            android:id="@+id/tvDetailQM"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardView6"
+                            android:layout_width="94dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="14dp"
                             android:layout_marginTop="8dp"
-                            android:layout_marginEnd="32dp"
-                            android:text="Pflanzen/m2:"
-                            android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
+                            android:layout_marginEnd="6dp"
+                            app:cardBackgroundColor="@color/buttonlila"
+                            app:cardCornerRadius="4dp"
+                            app:layout_constraintEnd_toStartOf="@+id/cardView3"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="1dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/tvDetailAussaat"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:text="3-5"
+                                    android:textColor="@color/black"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.301"
+                                    app:layout_constraintStart_toStartOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <TextView
+                                android:id="@+id/tvAussaatText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Saatzeit:"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardView3"
+                            android:layout_width="94dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="6dp"
+                            app:cardBackgroundColor="@color/buttonlila"
+                            app:cardCornerRadius="4dp"
+                            app:layout_constraintEnd_toStartOf="@+id/materialCardView"
+                            app:layout_constraintStart_toEndOf="@+id/cardView6"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="1dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/textView10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="3dp"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Erntezeit:"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvDetailErnte"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:text="7-9"
+                                    android:textColor="@color/black"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/materialCardView"
+                            android:layout_width="126dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="14dp"
+                            app:cardBackgroundColor="@color/buttonlila"
+                            app:cardCornerRadius="4dp"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+                            app:layout_constraintStart_toEndOf="@+id/cardView3"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="1dp">
 
-                        <TextView
-                            android:id="@+id/tvAussaatText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="8dp"
-                            android:text="Saatzeit:"
-                            android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/textView10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="16dp"
-                            android:text="Erntezeit:"
-                            android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toStartOf="@+id/tvDetailQM"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+                                <TextView
+                                    android:id="@+id/tvDetailMeter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="47dp"
+                                    android:text="30"
+                                    android:textColor="@color/black"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvDetailQM"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Pflanzen/m2:"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

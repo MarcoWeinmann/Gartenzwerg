@@ -239,6 +239,19 @@ class Datasource {
                 3
             ),
 
+            Pflanzen(
+                "Brokkoli",
+            R.drawable.brokkoli1,
+                "Brokkoli oder Broccoli (italienisch il broccolo von broccoli, „Kohlsprossen“), auch Bröckel-, Spargel- oder Winterblumenkohl genannt, ist eine mit dem Blumenkohl verwandte Gemüsepflanze aus der Familie der Kreuzblütengewächse.",
+                20,
+                2,
+                2,
+                7,
+                7,
+                4
+
+            )
+
         )
     }
 }

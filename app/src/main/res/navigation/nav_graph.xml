@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/beetFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -74,4 +74,9 @@
         android:name="de.syntaxinstitut.gartenzwerg.ui.signup.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/beetFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.ui.beet.BeetFragment"
+        android:label="fragment_beet"
+        tools:layout="@layout/fragment_beet" />
 </navigation>

@@ -19,6 +19,13 @@ class BeetFragment : Fragment() {
 
 
     }
+    //Dropdownmenu
+    override fun onResume() {
+        super.onResume()
+        val gemuese = resources.getStringArray(R.array.Gemuese)
+        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, gemuese)
+        binding.autoCompleteBeet.setAdapter(arrayAdapter)
+    }
 
 
 

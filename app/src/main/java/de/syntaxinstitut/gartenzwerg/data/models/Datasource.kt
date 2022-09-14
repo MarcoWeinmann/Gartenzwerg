@@ -22,7 +22,8 @@ class Datasource {
             Pflanzen(
                 "Blumenkohl",
                 R.drawable.blumenkohl,
-                "Blumenkohl (Bezeichnung in Deutschland und in Vorarlberg sowie Schweizer Hochdeutsch) bzw. Karfiol (österreichisches Hochdeutsch)[1] (Brassica oleracea var. botrytis L.), regional auch „Käsekohl“, „Blütenkohl“, „Traubenkohl“, „Minarett-Kohl“ oder „Italienischer Kohl“ genannt, ist eine Zuchtsorte des Gemüsekohls (Brassica oleracea) mit fleischigen, in einem Kopf zusammenstehenden Blütensprossen, die als Gemüse (genauer: als Blütengemüse) gegessen werden. Anders als bei anderen Kohlsorten bildet sich der Blütenstand bereits im ersten Jahr. Werden die Pflanzen nicht geerntet, kommt es zum „Schießen“, der gestauchte Spross streckt sich, und es werden gelbe Blüten und danach Samen gebildet.",
+                "Blumenkohl (Bezeichnung in Deutschland und in Vorarlberg sowie Schweizer Hochdeutsch) bzw. Karfiol (österreichisches Hochdeutsch), " +
+                        "regional auch „Käsekohl“, „Blütenkohl“, „Traubenkohl“, „Minarett-Kohl“ oder „Italienischer Kohl“ genannt, ist eine Zuchtsorte des Gemüsekohls (Brassica oleracea) mit fleischigen, in einem Kopf zusammenstehenden Blütensprossen, die als Gemüse (genauer: als Blütengemüse) gegessen werden. Anders als bei anderen Kohlsorten bildet sich der Blütenstand bereits im ersten Jahr. Werden die Pflanzen nicht geerntet, kommt es zum „Schießen“, der gestauchte Spross streckt sich, und es werden gelbe Blüten und danach Samen gebildet.",
             2,
                 4,
                 6,
@@ -119,7 +120,7 @@ class Datasource {
             Pflanzen(
                 "Kohlrabi",
                 R.drawable.kohlrabi1,
-                "Der Kohlrabi (Brassica oleracea var. gongylodes L.),[1] auch Oberkohlrabi, Oberrübe, Kohlrübe (Wien), Rübkohl (Schweiz), Stängelrübe[2] und Luftkohlrabi[3] ist eine Gemüsepflanze. Er ist eine der vielen Zuchtformen des Gemüsekohls. Genutzt wird hier die verdickte, oberirdische Sprossachse (Sprossknolle).",
+                "Der Kohlrabi (Brassica oleracea var. gongylodes), auch Oberkohlrabi, Oberrübe, Kohlrübe (Wien), Rübkohl (Schweiz), Stängelrübe und Luftkohlrabi ist eine Gemüsepflanze. Er ist eine der vielen Zuchtformen des Gemüsekohls. Genutzt wird hier die verdickte, oberirdische Sprossachse (Sprossknolle).",
             10,
                 2,
                 7,
@@ -131,7 +132,7 @@ class Datasource {
             Pflanzen(
                 "Lauch",
                 R.drawable.lauch,
-                "Lauch (Allium ampeloprasum Lauch-Gruppe, Synonym: Allium porrum), auch Porree (von gleichbedeutend lateinisch porrum), Breitlauch, Winterlauch, Welschzwiebel, Gemeiner Lauch, Spanischer Lauch, Aschlauch, Fleischlauch genannt, ist eine Sortengruppe des aus dem Mittelmeerraum stammenden Ackerlauchs (Allium ampeloprasum).[1] Dieses Gemüse zählt zur Gattung Allium in der Unterfamilie der Lauchgewächse (Allioideae).",
+                "Lauch (Allium ampeloprasum Lauch-Gruppe, Synonym: Allium porrum), auch Porree (von gleichbedeutend lateinisch porrum), Breitlauch, Winterlauch, Welschzwiebel, Gemeiner Lauch, Spanischer Lauch, Aschlauch, Fleischlauch genannt, ist eine Sortengruppe des aus dem Mittelmeerraum stammenden Ackerlauchs (Allium ampeloprasum). Dieses Gemüse zählt zur Gattung Allium in der Unterfamilie der Lauchgewächse.",
             11,
                 4,
                 4,
@@ -143,7 +144,7 @@ class Datasource {
             Pflanzen(
                 "Petersilie",
                 R.drawable.petersilie1,
-                "Die Petersilie (Petroselinum crispum; Synonym: Petroselinum sativum L.[1]), in Österreich und Altbayern auch der Petersil, weitere Trivialnamen sind Peterle bzw. Peterli, Peterling, Petergrün und Silk (früher auch Felsensilge und Steineppich[2]), ist eine Pflanzenart aus der Gattung Petroselinum innerhalb der Familie der Doldenblütler (Apiaceae). Sie kommt wildwachsend im Mittelmeerraum vor. In Europa und dem gesamten Mittelmeerraum gehören die je nach Sorte glatten oder krausen Blätter ihrer Zuchtformen zu den am meisten verbreiteten Küchenkräutern; die besonders große Speicherwurzel der Varietät oder Unterart Wurzelpetersilie (Petroselinum crispum subsp. tuberosum) dient als Bestandteil von Suppengrün.",
+                "Die Petersilie (Petroselinum crispum; Synonym: Petroselinum sativum), in Österreich und Altbayern auch der Petersil, weitere Trivialnamen sind Peterle bzw. Peterli, Peterling, Petergrün und Silk (früher auch Felsensilge und Steineppich), ist eine Pflanzenart aus der Gattung Petroselinum innerhalb der Familie der Doldenblütler (Apiaceae). Sie kommt wildwachsend im Mittelmeerraum vor. In Europa und dem gesamten Mittelmeerraum gehören die je nach Sorte glatten oder krausen Blätter ihrer Zuchtformen zu den am meisten verbreiteten Küchenkräutern; die besonders große Speicherwurzel der Varietät oder Unterart Wurzelpetersilie (Petroselinum crispum subsp. tuberosum) dient als Bestandteil von Suppengrün.",
             12,
                 2,
                 4,
@@ -179,7 +180,7 @@ class Datasource {
             Pflanzen(
                 "Spargel",
                 R.drawable.spargel1,
-                "Spargel (Asparagus), von lateinisch asparagus (Spargel: insbesondere Gemüsespargel, auch Spitzblättriger Spargel[1]), ist eine Pflanzengattung in der Familie der Spargelgewächse (Asparagaceae). Asparagus-Arten sind in der Alten Welt in Eurasien und Afrika weitverbreitet. Es gibt einige Arten und Kulturformen, die als Zierpflanzen verwendet werden.[2] Die wirtschaftlich wichtigste Art dieser Gattung ist der Gemüsespargel (Asparagus officinalis).",
+                "Spargel (Asparagus), von lateinisch asparagus (Spargel: insbesondere Gemüsespargel, auch Spitzblättriger Spargel), ist eine Pflanzengattung in der Familie der Spargelgewächse (Asparagaceae). Asparagus-Arten sind in der Alten Welt in Eurasien und Afrika weitverbreitet. Es gibt einige Arten und Kulturformen, die als Zierpflanzen verwendet werden. Die wirtschaftlich wichtigste Art dieser Gattung ist der Gemüsespargel (Asparagus officinalis).",
             15,
                 3,
                 4,
@@ -191,7 +192,7 @@ class Datasource {
             Pflanzen(
                 "Tomate",
                 R.drawable.tomate1,
-                "Die Tomate (Solanum lycopersicum), in Österreich sowie in Südtirol auch der Paradeiser bzw. die Paradeis[1] (seltener Paradeisapfel)[2] genannt, ist eine Pflanzenart aus der Familie der Nachtschattengewächse (Solanaceae). Damit ist sie eng mit anderen Speisegewächsen wie der Kartoffel (Solanum tuberosum), der Paprika (Capsicum) und der Aubergine (Solanum melongena) verwandt, aber auch mit Pflanzen wie der Tollkirsche, der Alraune, der Engelstrompete, der Petunie oder dem Tabak (Nicotiana).",
+                "Die Tomate (Solanum lycopersicum), in Österreich sowie in Südtirol auch der Paradeiser bzw. die Paradeis (seltener Paradeisapfel) genannt, ist eine Pflanzenart aus der Familie der Nachtschattengewächse (Solanaceae). Damit ist sie eng mit anderen Speisegewächsen wie der Kartoffel (Solanum tuberosum), der Paprika (Capsicum) und der Aubergine (Solanum melongena) verwandt, aber auch mit Pflanzen wie der Tollkirsche, der Alraune, der Engelstrompete, der Petunie oder dem Tabak (Nicotiana).",
             16,
                 3,
                 3,
@@ -204,8 +205,7 @@ class Datasource {
             Pflanzen(
                 "Zucchini",
                 R.drawable.zucchini1,
-                "Die Zucchini [tsuˈkiːni], in der Deutschschweiz Zucchetti, sind eine Unterart des Gartenkürbisses und gehören zur Pflanzenfamilie der Kürbisgewächse (Cucurbitaceae). Zucchini sind einhäusig, das heißt, männliche und weibliche Geschlechtsorgane befinden sich in getrennten Blüten, aber an einer Pflanze." +
-                        "Die Zucchini ist eine Zuchtform des ursprünglich in Amerika beheimateten und zu den ältesten Kulturpflanzen der Menschheit zählenden Gartenkürbis. Dieser gelangte in der Neuzeit nach Europa, wo in Italien die Zucchini gezüchtet wurde.",
+                "Die Zucchini [tsuˈkiːni], in der Deutschschweiz Zucchetti, sind eine Unterart des Gartenkürbisses und gehören zur Pflanzenfamilie der Kürbisgewächse (Cucurbitaceae). Zucchini sind einhäusig, das heißt, männliche und weibliche Geschlechtsorgane befinden sich in getrennten Blüten, aber an einer Pflanze. Die Zucchini ist eine Zuchtform des ursprünglich in Amerika beheimateten und zu den ältesten Kulturpflanzen der Menschheit zählenden Gartenkürbis. Dieser gelangte in der Neuzeit nach Europa, wo in Italien die Zucchini gezüchtet wurde.",
             17,
                 5,
                 5,

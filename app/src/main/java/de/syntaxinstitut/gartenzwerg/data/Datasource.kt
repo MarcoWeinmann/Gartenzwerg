@@ -1,6 +1,7 @@
-package de.syntaxinstitut.gartenzwerg.data.models
+package de.syntaxinstitut.gartenzwerg.data
 
 import de.syntaxinstitut.gartenzwerg.R
+import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
 
 class Datasource {
     fun loadGemüuse(): List<Pflanzen>{

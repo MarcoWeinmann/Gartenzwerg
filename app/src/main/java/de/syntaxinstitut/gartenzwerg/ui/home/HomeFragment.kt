@@ -5,17 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
-import de.syntaxinstitut.gartenzwerg.MainActivity
 import de.syntaxinstitut.gartenzwerg.R
 import de.syntaxinstitut.gartenzwerg.adapter.AdapterHome
-import de.syntaxinstitut.gartenzwerg.data.models.Datasource
-import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
+import de.syntaxinstitut.gartenzwerg.data.Datasource
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentHomeBinding
+import de.syntaxinstitut.gartenzwerg.MainViewModel
 import de.syntaxinstitut.gartenzwerg.ui.signup.AuthViewModel
 
 /**
@@ -29,7 +28,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var binding: FragmentHomeBinding
 
     /** Das ViewModel zu diesem Fragment */
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: MainViewModel by activityViewModels()
     private val authviewmodel: AuthViewModel by viewModels()
 
     /* -------------------- Lifecycle -------------------- */
@@ -46,11 +45,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        val pflanzen = Datasource().loadGemüuse()
+        viewModel.veggies.observe(
+            viewLifecycleOwner,
+            Observer {
+                binding.rvVeggie.adapter = AdapterHome(it)
 
-        binding.rvVeggie.adapter = AdapterHome(pflanzen)
+                binding.rvVeggie.setHasFixedSize(true)
+            }
+        )
 
-        binding.rvVeggie.setHasFixedSize(true)
+
 
       //  binding.buttonLogOut.setOnClickListener{
         //    authviewmodel.logout()

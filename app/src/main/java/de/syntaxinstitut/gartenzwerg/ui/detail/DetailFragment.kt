@@ -1,14 +1,12 @@
 package de.syntaxinstitut.gartenzwerg.ui.detail
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import de.syntaxinstitut.gartenzwerg.R
-import de.syntaxinstitut.gartenzwerg.data.models.Datasource
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentDetailBinding
 
 

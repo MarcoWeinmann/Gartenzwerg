@@ -9,5 +9,6 @@ class Pflanzen (
     val aussaatZeitEnde: Int,
     val ernteZeitStart: Int,
     val ernteZeitEnde: Int,
-    val pflanzenProQMeter: Int
+    val pflanzenProQMeter: Int,
+    var clicked: Boolean = false
     )

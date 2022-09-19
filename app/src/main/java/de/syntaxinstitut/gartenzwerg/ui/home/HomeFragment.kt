@@ -48,7 +48,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         viewModel.veggies.observe(
             viewLifecycleOwner,
             Observer {
-                binding.rvVeggie.adapter = AdapterHome(it)
+                binding.rvVeggie.adapter = AdapterHome(it, requireContext())
 
                 binding.rvVeggie.setHasFixedSize(true)
             }

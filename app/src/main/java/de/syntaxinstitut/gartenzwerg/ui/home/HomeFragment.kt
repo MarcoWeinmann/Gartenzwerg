@@ -10,17 +10,19 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.gartenzwerg.R
 import de.syntaxinstitut.gartenzwerg.adapter.AdapterHome
 import de.syntaxinstitut.gartenzwerg.data.Datasource
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentHomeBinding
 import de.syntaxinstitut.gartenzwerg.MainViewModel
+import de.syntaxinstitut.gartenzwerg.ui.login.LoginFragment
 import de.syntaxinstitut.gartenzwerg.ui.signup.AuthViewModel
 
 /**
  * Fragment 1
  */
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment() {
 
     /* -------------------- Klassen Variablen -------------------- */
 
@@ -29,7 +31,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     /** Das ViewModel zu diesem Fragment */
     private val viewModel: MainViewModel by activityViewModels()
-    private val authviewmodel: AuthViewModel by viewModels()
+    private val authviewmodel: AuthViewModel by activityViewModels()
 
     /* -------------------- Lifecycle -------------------- */
 
@@ -54,33 +56,31 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
         )
 
-
-
-      //  binding.buttonLogOut.setOnClickListener{
-        //    authviewmodel.logout()
-    //}
-
-
-
-        }
-
-  /*      authviewmodel.currentUser.observe(
+        authviewmodel.currentUser.observe(
             viewLifecycleOwner,
-            Observer{
+            Observer {
                 if (it == null) {
-                    findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
+                    findNavController().navigate(R.id.loginFragment)
                 }
             }
-        )*/
+        )
 
-        /* -------------------- UI-Interaktionen -------------------- */
-
-
-        /* -------------------- Observer -------------------- */
-
-        // Navigation zum zweiten Fragment
+        binding.buttonLogOutHome.setOnClickListener {
+            authviewmodel.logout()
+        }
 
 
 
     }
+
+
+    /* -------------------- UI-Interaktionen -------------------- */
+
+
+    /* -------------------- Observer -------------------- */
+
+    // Navigation zum zweiten Fragment
+
+
+}
 

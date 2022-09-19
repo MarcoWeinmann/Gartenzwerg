@@ -25,17 +25,12 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="de.syntaxinstitut.gartenzwerg.ui.login.LoginFragment"
-        android:label="LoginFragment"
+        android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/profilFragment"
-        android:name="de.syntaxinstitut.gartenzwerg.ui.profil.ProfilFragment"
-        android:label="fragment_profil"
-        tools:layout="@layout/fragment_profil" />
     <fragment
         android:id="@+id/detailFragment"
         android:name="de.syntaxinstitut.gartenzwerg.ui.detail.DetailFragment"

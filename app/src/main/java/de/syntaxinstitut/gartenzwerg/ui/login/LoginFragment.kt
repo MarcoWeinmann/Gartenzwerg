@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import de.syntaxinstitut.gartenzwerg.MainActivity
 import de.syntaxinstitut.gartenzwerg.R
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentLoginBinding
 import de.syntaxinstitut.gartenzwerg.ui.signup.AuthViewModel
@@ -20,6 +21,11 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
 
     private val viewmodel: AuthViewModel by activityViewModels()
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        (activity as MainActivity).hideBottombar()
+    }
 
 
     override fun onCreateView(
@@ -38,6 +44,7 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         binding.SignUpButton1.setOnClickListener{
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToSignUpFragment())
@@ -60,6 +67,7 @@ class LoginFragment : Fragment() {
                 }
             }
         )
+
 
     }
 

@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import de.syntaxinstitut.gartenzwerg.MainActivity
 import de.syntaxinstitut.gartenzwerg.R
 import de.syntaxinstitut.gartenzwerg.adapter.AdapterHome
 import de.syntaxinstitut.gartenzwerg.data.Datasource
@@ -33,7 +34,13 @@ class HomeFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels()
     private val authviewmodel: AuthViewModel by activityViewModels()
 
+
     /* -------------------- Lifecycle -------------------- */
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        (activity as MainActivity).showBottombar()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

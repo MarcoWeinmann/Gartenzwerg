@@ -65,7 +65,7 @@
                 android:id="@+id/tvBeet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="8dp"
                 android:text="Mein Beet"
                 android:textColor="@color/black"
                 android:textSize="34sp"
@@ -196,7 +196,8 @@
                             android:inputType="none"
                             android:paddingTop="16dp"
                             android:paddingBottom="16dp"
-                            android:text="Gemüse-Sorten" />
+                            android:text="Gemüse-Sorten"
+                            android:textStyle="bold" />
 
 
                     </com.google.android.material.textfield.TextInputLayout>

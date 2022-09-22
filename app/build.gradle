@@ -85,4 +85,6 @@ dependencies {
 
     //Selbst hinzugefügt
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    //Moshi
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
 }

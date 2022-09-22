@@ -48,7 +48,7 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        viewmodel.veggies.observe(
+        viewmodel.pflanzen.observe(
             viewLifecycleOwner,
             Observer {list ->
                 val pflanzen = list.find {
@@ -56,7 +56,6 @@ class DetailFragment : Fragment() {
                 }
                 if (pflanzen != null){
                     binding.tvDetailText.text = pflanzen.text
-                    binding.ivDetail.setImageResource(pflanzen.pictureResource)
                     binding.tvDetailName.text = pflanzen.name
                     binding.tvDetailMeter.text = pflanzen.pflanzenProQMeter.toString()
 

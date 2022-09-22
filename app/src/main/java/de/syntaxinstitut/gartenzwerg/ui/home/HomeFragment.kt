@@ -7,17 +7,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.gartenzwerg.MainActivity
 import de.syntaxinstitut.gartenzwerg.R
 import de.syntaxinstitut.gartenzwerg.adapter.AdapterHome
-import de.syntaxinstitut.gartenzwerg.data.Datasource
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentHomeBinding
 import de.syntaxinstitut.gartenzwerg.MainViewModel
-import de.syntaxinstitut.gartenzwerg.ui.login.LoginFragment
 import de.syntaxinstitut.gartenzwerg.ui.signup.AuthViewModel
 
 /**
@@ -54,12 +50,16 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        viewModel.veggies.observe(
+        val gemueseAdapter = AdapterHome()
+
+        binding.rvVeggie.adapter = gemueseAdapter
+
+        viewModel.pflanzen.observe(
             viewLifecycleOwner,
             Observer {
-                binding.rvVeggie.adapter = AdapterHome(it, requireContext())
+                gemueseAdapter.submitList(it)
+              //  binding.rvVeggie.adapter = AdapterHome(it, requireContext())
 
-                binding.rvVeggie.setHasFixedSize(true)
             }
         )
 

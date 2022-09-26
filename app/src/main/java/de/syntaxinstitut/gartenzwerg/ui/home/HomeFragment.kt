@@ -50,14 +50,14 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        val gemueseAdapter = AdapterHome()
+        val pflanzenAdapter = AdapterHome()
 
-        binding.rvVeggie.adapter = gemueseAdapter
+        binding.rvVeggie.adapter = pflanzenAdapter
 
         viewModel.pflanzen.observe(
             viewLifecycleOwner,
             Observer {
-                gemueseAdapter.submitList(it)
+                pflanzenAdapter.submitList(it)
               //  binding.rvVeggie.adapter = AdapterHome(it, requireContext())
 
             }

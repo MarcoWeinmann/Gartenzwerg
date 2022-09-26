@@ -1,14 +1,17 @@
 package de.syntaxinstitut.gartenzwerg.ui.detail
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import coil.load
+import de.syntaxinstitut.gartenzwerg.MainViewModel
 import de.syntaxinstitut.gartenzwerg.R
-import de.syntaxinstitut.gartenzwerg.data.models.Datasource
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentDetailBinding
 
 
@@ -16,29 +19,22 @@ class DetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailBinding
 
-    private var name = ""
-    private var bild = 0
-    private var text = ""
+    private val viewmodel: MainViewModel by activityViewModels()
 
-    private var saatStart: String = ""
-    private var saatEnde: String = ""
-    private var ernteStart: String = ""
-    private var ernteEnde: String = ""
-    private var pflanzenProQm: String = ""
+    private var veggieId = 0
+
+    private var detailBild = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       if (arguments != null) {
-           name = arguments!!.getString("name").toString()
-           text = arguments!!.getString("text").toString()
-           bild = arguments!!.getInt("bild")
+        arguments?.let {
 
-           saatStart = arguments!!.getInt("aussaatStart").toString()
-           saatEnde = arguments!!.getInt("aussaatEnde").toString()
-           ernteStart = arguments!!.getInt("ernteStart").toString()
-           ernteEnde = arguments!!.getInt("ernteEnde").toString()
-           pflanzenProQm = arguments!!.getInt("pflanzenProQm").toString()
+           veggieId = it.getInt("id")
+
+            detailBild = it.getString("bild").toString()
+
+
        }
 
     }
@@ -57,24 +53,37 @@ class DetailFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.tvDetailText.text = text
-        binding.ivDetail.setImageResource(bild)
-        binding.tvDetailName.text = name
 
-        binding.tvDetailMeter.text = pflanzenProQm
+        viewmodel.pflanzen.observe(
+            viewLifecycleOwner,
+            Observer {list ->
+                val pflanzen = list.find {
+                    it.id == veggieId
+                   // it.imageResource == detailBild
+                }
+                if (pflanzen != null){
+                    binding.tvDetailText.text = pflanzen.text
+                    binding.tvDetailName.text = pflanzen.name
+                    binding.tvDetailMeter.text = pflanzen.pflanzenProQMeter.toString()
+                //Api
+                    val imgUri = detailBild.toUri().buildUpon().scheme("https").build()
+                    binding.ivDetail.load(imgUri)
 
-        if (saatStart == saatEnde){
-            binding.tvDetailAussaat.text = "$saatStart"
-        }else{
-            binding.tvDetailAussaat.text = "$saatStart-$saatEnde"
-        }
+                    if (pflanzen.aussaatZeitStart == pflanzen.aussaatZeitEnde){
+                        binding.tvDetailAussaat.text = "${pflanzen.aussaatZeitStart}"
+                    }else{
+                        binding.tvDetailAussaat.text = "${pflanzen.aussaatZeitStart}-${pflanzen.aussaatZeitEnde}"
+                    }
 
-        if (ernteStart == ernteEnde){
-            binding.tvDetailErnte.text = "$ernteStart"
-        }else{
-            binding.tvDetailErnte.text = "$ernteStart-$ernteEnde"
-        }
+                    if (pflanzen.ernteZeitStart == pflanzen.ernteZeitEnde){
+                        binding.tvDetailErnte.text = "${pflanzen.ernteZeitStart}"
+                    }else{
+                        binding.tvDetailErnte.text = "${pflanzen.ernteZeitStart}-${pflanzen.ernteZeitEnde}"
+                    }
+                }
 
+            }
+        )
 
 
     }

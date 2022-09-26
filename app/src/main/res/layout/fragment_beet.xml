@@ -49,29 +49,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/buttonLogoutBeet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="6dp"
-                android:clickable="true"
-                android:src="@drawable/logout_black_24dp"
-                app:backgroundTint="@color/buttonlila"
-                app:layout_constraintEnd_toEndOf="@+id/ToolbarBeet"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/tvBeet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="8dp"
                 android:text="Mein Beet"
                 android:textColor="@color/black"
                 android:textSize="34sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/buttonLogoutBeet"
-                app:layout_constraintHorizontal_bias="0.496"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="@+id/ToolbarBeet"
+                app:layout_constraintHorizontal_bias="0.341"
                 app:layout_constraintStart_toEndOf="@+id/buttonBurgerBeet"
                 app:layout_constraintTop_toTopOf="@+id/ToolbarBeet" />
 
@@ -196,7 +184,8 @@
                             android:inputType="none"
                             android:paddingTop="16dp"
                             android:paddingBottom="16dp"
-                            android:text="Gemüse-Sorten" />
+                            android:text="Gemüse-Sorten"
+                            android:textStyle="bold" />
 
 
                     </com.google.android.material.textfield.TextInputLayout>

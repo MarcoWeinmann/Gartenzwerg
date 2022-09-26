@@ -126,13 +126,14 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
-                                    android:text="3-5"
+                                    android:layout_marginBottom="6dp"
+                                    android:text="Apr - Jun"
                                     android:textColor="@color/black"
-                                    android:textSize="24sp"
+                                    android:textSize="16sp"
                                     android:textStyle="bold"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.301"
+                                    app:layout_constraintHorizontal_bias="0.0"
                                     app:layout_constraintStart_toStartOf="parent" />
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -184,13 +185,16 @@
                                     android:id="@+id/tvDetailErnte"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="20dp"
-                                    android:text="7-9"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginBottom="6dp"
+                                    android:text="Sep - Nov"
                                     android:textColor="@color/black"
-                                    android:textSize="24sp"
+                                    android:textSize="16sp"
                                     android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                                    app:layout_constraintTop_toBottomOf="@+id/textView10"
+                                    app:layout_constraintVertical_bias="0.0" />
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </com.google.android.material.card.MaterialCardView>
@@ -219,9 +223,10 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="47dp"
+                                    android:layout_marginBottom="6dp"
                                     android:text="30"
                                     android:textColor="@color/black"
-                                    android:textSize="24sp"
+                                    android:textSize="20sp"
                                     android:textStyle="bold"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintStart_toStartOf="parent" />

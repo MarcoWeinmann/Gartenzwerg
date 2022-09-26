@@ -5,23 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.gartenzwerg.MainActivity
 import de.syntaxinstitut.gartenzwerg.R
 import de.syntaxinstitut.gartenzwerg.adapter.AdapterHome
-import de.syntaxinstitut.gartenzwerg.data.models.Datasource
-import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentHomeBinding
+import de.syntaxinstitut.gartenzwerg.MainViewModel
 import de.syntaxinstitut.gartenzwerg.ui.signup.AuthViewModel
 
 /**
  * Fragment 1
  */
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment() {
 
     /* -------------------- Klassen Variablen -------------------- */
 
@@ -29,10 +27,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var binding: FragmentHomeBinding
 
     /** Das ViewModel zu diesem Fragment */
-    private val viewModel: HomeViewModel by viewModels()
-    private val authviewmodel: AuthViewModel by viewModels()
+    private val viewModel: MainViewModel by activityViewModels()
+    private val authviewmodel: AuthViewModel by activityViewModels()
+
 
     /* -------------------- Lifecycle -------------------- */
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        (activity as MainActivity).showBottombar()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,37 +50,44 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        val pflanzen = Datasource().loadGemüuse()
+        val gemueseAdapter = AdapterHome()
 
-        binding.rvVeggie.adapter = AdapterHome(pflanzen)
+        binding.rvVeggie.adapter = gemueseAdapter
 
-        binding.rvVeggie.setHasFixedSize(true)
-
-      //  binding.buttonLogOut.setOnClickListener{
-        //    authviewmodel.logout()
-    //}
-
-
-
-        }
-
-  /*      authviewmodel.currentUser.observe(
+        viewModel.pflanzen.observe(
             viewLifecycleOwner,
-            Observer{
+            Observer {
+                gemueseAdapter.submitList(it)
+              //  binding.rvVeggie.adapter = AdapterHome(it, requireContext())
+
+            }
+        )
+
+        authviewmodel.currentUser.observe(
+            viewLifecycleOwner,
+            Observer {
                 if (it == null) {
-                    findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoginFragment())
+                    findNavController().navigate(R.id.loginFragment)
                 }
             }
-        )*/
+        )
 
-        /* -------------------- UI-Interaktionen -------------------- */
-
-
-        /* -------------------- Observer -------------------- */
-
-        // Navigation zum zweiten Fragment
+        binding.buttonLogOutHome.setOnClickListener {
+            authviewmodel.logout()
+        }
 
 
 
     }
+
+
+    /* -------------------- UI-Interaktionen -------------------- */
+
+
+    /* -------------------- Observer -------------------- */
+
+    // Navigation zum zweiten Fragment
+
+
+}
 

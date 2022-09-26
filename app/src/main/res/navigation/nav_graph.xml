@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/beetFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -25,17 +25,12 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="de.syntaxinstitut.gartenzwerg.ui.login.LoginFragment"
-        android:label="LoginFragment"
+        android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/profilFragment"
-        android:name="de.syntaxinstitut.gartenzwerg.ui.profil.ProfilFragment"
-        android:label="fragment_profil"
-        tools:layout="@layout/fragment_profil" />
     <fragment
         android:id="@+id/detailFragment"
         android:name="de.syntaxinstitut.gartenzwerg.ui.detail.DetailFragment"
@@ -49,22 +44,22 @@
             app:argType="string" />
         <argument
             android:name="bild"
-            app:argType="integer" />
+            app:argType="string" />
         <argument
             android:name="text"
             app:argType="string" />
         <argument
             android:name="aussaatStart"
-            app:argType="integer" />
+            app:argType="string" />
         <argument
             android:name="aussaatEnde"
-            app:argType="integer" />
+            app:argType="string" />
         <argument
             android:name="ernteStart"
-            app:argType="integer" />
+            app:argType="string" />
         <argument
             android:name="ernteEnde"
-            app:argType="integer" />
+            app:argType="string" />
         <argument
             android:name="pflanzenProQm"
             app:argType="integer" />

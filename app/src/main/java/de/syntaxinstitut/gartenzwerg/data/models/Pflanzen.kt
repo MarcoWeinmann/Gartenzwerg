@@ -8,7 +8,7 @@ import com.squareup.moshi.Json
 data class Pflanzen (
 
     //PrimaryKey besagt: Die nachfolgende Variable dient als Schlüssel
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     val id: Int,
     val name: String,
     @Json(name = "pictureResource")

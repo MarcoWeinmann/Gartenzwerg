@@ -16,12 +16,8 @@ import de.syntaxinstitut.gartenzwerg.databinding.FragmentHomeBinding
 import de.syntaxinstitut.gartenzwerg.MainViewModel
 import de.syntaxinstitut.gartenzwerg.ui.signup.AuthViewModel
 
-/**
- * Fragment 1
- */
 class HomeFragment : Fragment() {
 
-    /* -------------------- Klassen Variablen -------------------- */
 
     /** Bindet das XML-View mit der Klasse um auf die Elemente zugreifen zu können */
     private lateinit var binding: FragmentHomeBinding
@@ -75,19 +71,6 @@ class HomeFragment : Fragment() {
         binding.buttonLogOutHome.setOnClickListener {
             authviewmodel.logout()
         }
-
-
-
     }
-
-
-    /* -------------------- UI-Interaktionen -------------------- */
-
-
-    /* -------------------- Observer -------------------- */
-
-    // Navigation zum zweiten Fragment
-
-
 }
 

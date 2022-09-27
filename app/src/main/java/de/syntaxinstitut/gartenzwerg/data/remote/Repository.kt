@@ -27,7 +27,7 @@ class Repository(private val pflanzenApi: PflanzenApi, private val database: Pfl
 
     suspend fun deleteAll() {
         try {
-            database.pflanzenDatabaseDao.deleteAll()
+        //    database.pflanzenDatabaseDao.deleteAll()
         }catch (e: Exception) {
             Log.d(TAG, "Failed to delete the Database: $e")
         }

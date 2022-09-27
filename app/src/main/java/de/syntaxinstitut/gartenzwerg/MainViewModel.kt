@@ -37,7 +37,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private fun loadData() {
         viewModelScope.launch {
-            repository.deleteAll()
             _loading.value = ApiStatus.LOADING
             try {
                 repository.getPflanzen()

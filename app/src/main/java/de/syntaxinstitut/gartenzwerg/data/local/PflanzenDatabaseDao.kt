@@ -17,7 +17,4 @@ interface PflanzenDatabaseDao {
     @Query("SELECT * from Pflanzen")
     fun getAll(): LiveData<List<Pflanzen>>
 
-    @Query("DELETE from Pflanzen")
-    suspend fun deleteAll()
-
 }

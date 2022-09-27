@@ -49,18 +49,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/buttonBurgerHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="6dp"
-            android:clickable="true"
-            app:backgroundTint="@color/buttonlila"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_menu_black_24dp" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/buttonLogOutHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,14 +64,13 @@
             android:id="@+id/tvHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="96dp"
             android:layout_marginTop="8dp"
             android:text="Home"
             android:textColor="@color/black"
             android:textSize="34sp"
             android:textStyle="bold|italic"
-            app:layout_constraintStart_toEndOf="@+id/buttonBurgerHome"
-            app:layout_constraintTop_toTopOf="@+id/ivHomeBG" />
+            app:layout_constraintTop_toTopOf="@+id/ivHomeBG"
+            tools:layout_editor_absoluteX="158dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

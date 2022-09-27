@@ -42,33 +42,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/ButtonBurgerKalender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="4dp"
-                android:clickable="true"
-                android:contentDescription="BurgerMenu"
-                app:backgroundTint="@color/buttonlila"
-                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/baseline_menu_black_24dp" />
-
             <TextView
                 android:id="@+id/tvKalender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
                 android:layout_marginTop="8dp"
                 android:text="Kalender"
                 android:textColor="@color/black"
                 android:textSize="34sp"
                 android:textStyle="bold|italic"
-                app:layout_constraintStart_toEndOf="@+id/ButtonBurgerKalender"
-                app:layout_constraintTop_toTopOf="@+id/toolbar" />
+                app:layout_constraintTop_toTopOf="@+id/toolbar"
+                tools:layout_editor_absoluteX="132dp" />
 
             <CalendarView
                 android:id="@+id/calendarView"

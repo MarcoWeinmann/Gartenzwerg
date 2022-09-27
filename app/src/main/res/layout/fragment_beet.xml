@@ -37,30 +37,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/buttonBurgerBeet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="6dp"
-                android:clickable="true"
-                android:src="@drawable/baseline_menu_black_24dp"
-                app:backgroundTint="@color/buttonlila"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/tvBeet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="128dp"
                 android:text="Mein Beet"
                 android:textColor="@color/black"
                 android:textSize="34sp"
                 android:textStyle="bold|italic"
                 app:layout_constraintEnd_toEndOf="@+id/ToolbarBeet"
-                app:layout_constraintHorizontal_bias="0.341"
-                app:layout_constraintStart_toEndOf="@+id/buttonBurgerBeet"
                 app:layout_constraintTop_toTopOf="@+id/ToolbarBeet" />
 
             <com.google.android.material.card.MaterialCardView

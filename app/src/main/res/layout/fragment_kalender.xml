@@ -42,18 +42,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tvKalender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Kalender"
-                android:textColor="@color/black"
-                android:textSize="34sp"
-                android:textStyle="bold|italic"
-                app:layout_constraintTop_toTopOf="@+id/toolbar"
-                tools:layout_editor_absoluteX="132dp" />
-
             <CalendarView
                 android:id="@+id/calendarView"
                 android:layout_width="wrap_content"
@@ -92,6 +80,37 @@
 
 
             </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/clickedGreen"
+                app:cardCornerRadius="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintStart_toStartOf="@+id/toolbar"
+                app:layout_constraintTop_toTopOf="@+id/ivKalenderBG"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvKalender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:text="Kalender"
+                        android:textColor="@color/black"
+                        android:textSize="34sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

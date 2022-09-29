@@ -42,34 +42,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/ButtonBurgerKalender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="4dp"
-                android:clickable="true"
-                android:contentDescription="BurgerMenu"
-                app:backgroundTint="@color/buttonlila"
-                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/baseline_menu_black_24dp" />
-
-            <TextView
-                android:id="@+id/tvKalender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
-                android:layout_marginTop="8dp"
-                android:text="Kalender"
-                android:textColor="@color/black"
-                android:textSize="34sp"
-                android:textStyle="bold|italic"
-                app:layout_constraintStart_toEndOf="@+id/ButtonBurgerKalender"
-                app:layout_constraintTop_toTopOf="@+id/toolbar" />
-
             <CalendarView
                 android:id="@+id/calendarView"
                 android:layout_width="wrap_content"
@@ -108,6 +80,72 @@
 
 
             </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/clickedGreen"
+                app:cardCornerRadius="20dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintStart_toStartOf="@+id/toolbar"
+                app:layout_constraintTop_toTopOf="@+id/ivKalenderBG"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvKalender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:text="Kalender"
+                        android:textColor="@color/black"
+                        android:textSize="34sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/buttonKalenderAussaat"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="48dp"
+                android:backgroundTint="@color/buttonlila"
+                android:text="Aussaat"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/buttonKalenderErnte"
+                app:layout_constraintStart_toStartOf="parent"
+                app:rippleColor="@color/buttonlila"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp" />
+
+            <Button
+                android:id="@+id/buttonKalenderErnte"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginBottom="48dp"
+                android:backgroundTint="@color/buttonlila"
+                android:text="Ernte"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/buttonKalenderAussaat"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

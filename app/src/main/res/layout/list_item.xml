@@ -9,14 +9,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="188dp"
-        android:layout_height="237dp"
+        android:layout_height="210dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp">
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvListItem"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="176dp"
+            android:layout_height="200dp"
 
             android:layout_marginRight="12dp"
             app:cardBackgroundColor="@color/apfelgrün"
@@ -26,16 +26,18 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintVertical_bias="1.0"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardView4"
-                    android:layout_width="171dp"
-                    android:layout_height="190dp"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
                     android:layout_marginStart="6dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="6dp"
@@ -43,20 +45,22 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="1dp">
 
                     <ImageView
                         android:id="@+id/ivListItem"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         app:srcCompat="@drawable/basilikum1" />
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
                 <TextView
                     android:id="@+id/tvListItem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="1dp"
                     android:text="Basilikum"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -66,7 +70,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

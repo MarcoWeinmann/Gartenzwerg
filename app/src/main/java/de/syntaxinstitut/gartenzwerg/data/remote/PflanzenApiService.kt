@@ -5,7 +5,6 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.create
 import retrofit2.http.GET
 
 //evtl "/" am ende der URL
@@ -20,11 +19,11 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-interface GemueseApiService {
+interface PflanzenApiService {
     @GET("data.json")
-    suspend fun getGemuese(): List<Pflanzen>
+    suspend fun getPflanzen(): List<Pflanzen>
 }
 
-object GemueseApi {
-    val retrofitService: GemueseApiService by lazy { retrofit.create(GemueseApiService::class.java) }
+object PflanzenApi {
+    val retrofitService: PflanzenApiService by lazy { retrofit.create(PflanzenApiService::class.java) }
 }

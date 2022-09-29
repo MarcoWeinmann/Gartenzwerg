@@ -16,12 +16,8 @@ import de.syntaxinstitut.gartenzwerg.databinding.FragmentHomeBinding
 import de.syntaxinstitut.gartenzwerg.MainViewModel
 import de.syntaxinstitut.gartenzwerg.ui.signup.AuthViewModel
 
-/**
- * Fragment 1
- */
 class HomeFragment : Fragment() {
 
-    /* -------------------- Klassen Variablen -------------------- */
 
     /** Bindet das XML-View mit der Klasse um auf die Elemente zugreifen zu können */
     private lateinit var binding: FragmentHomeBinding
@@ -50,14 +46,14 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        val gemueseAdapter = AdapterHome()
+        val pflanzenAdapter = AdapterHome()
 
-        binding.rvVeggie.adapter = gemueseAdapter
+        binding.rvVeggie.adapter = pflanzenAdapter
 
         viewModel.pflanzen.observe(
             viewLifecycleOwner,
             Observer {
-                gemueseAdapter.submitList(it)
+                pflanzenAdapter.submitList(it)
               //  binding.rvVeggie.adapter = AdapterHome(it, requireContext())
 
             }
@@ -75,19 +71,6 @@ class HomeFragment : Fragment() {
         binding.buttonLogOutHome.setOnClickListener {
             authviewmodel.logout()
         }
-
-
-
     }
-
-
-    /* -------------------- UI-Interaktionen -------------------- */
-
-
-    /* -------------------- Observer -------------------- */
-
-    // Navigation zum zweiten Fragment
-
-
 }
 

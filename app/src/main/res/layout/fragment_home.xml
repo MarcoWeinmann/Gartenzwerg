@@ -39,7 +39,7 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/materialToolbarHome"
-            android:layout_width="411dp"
+            android:layout_width="0dp"
             android:layout_height="73dp"
             android:background="@color/apfelgrün"
             android:minHeight="?attr/actionBarSize"

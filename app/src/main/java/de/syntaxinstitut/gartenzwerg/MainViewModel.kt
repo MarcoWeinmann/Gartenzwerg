@@ -26,6 +26,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     val pflanzen: LiveData<List<Pflanzen>> = repository.pflanzenList
 
+    //brauche currentPflanze für beet Rechnung (am besten mutableLivedata)
+
     private val _loading = MutableLiveData<ApiStatus>()
     val loading: LiveData<ApiStatus>
     get() = _loading
@@ -51,6 +53,16 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
     }
+
+    //funktion für mein bett
+    //soll die fläche ausrechnen und an Hand von Pflanzen/m2 sagen wieviel Pflanzen der im dropdown
+    //ausgewählten Pflanze auf das Beet passen und in tvErgebniss anzeigen
+    //länge mal breite geteilt durch pflanzen/m2
+     fun pflanzenRechner(laenge:Int, breite:Int, pflanzenM2:Int) :Int {
+        val flaeche = laenge * breite
+       return (flaeche / pflanzenM2).toInt()
+    }
+
 }
 
 

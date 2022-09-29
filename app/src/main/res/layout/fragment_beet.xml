@@ -29,7 +29,7 @@
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/ToolbarBeet"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="73dp"
                 android:background="@color/apfelgrün"
                 android:minHeight="?attr/actionBarSize"
@@ -37,6 +37,38 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="115dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/clickedGreen"
+                app:cardCornerRadius="20dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivBeetBG"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvBeet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="14dp"
+                        android:text="Mein Beet"
+                        android:textColor="@color/black"
+                        android:textSize="34sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cvBeet"
@@ -122,7 +154,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:ems="10"
-                        android:inputType="textPersonName"
+                        android:inputType="number"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/tvBeetLänge"
                         app:layout_constraintTop_toBottomOf="@+id/evBeetName" />
@@ -133,7 +165,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:ems="10"
-                        android:inputType="textPersonName"
+                        android:inputType="number"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.523"
                         app:layout_constraintStart_toEndOf="@+id/tvBeetBreite"
@@ -188,15 +220,15 @@
                 app:strokeWidth="2dp" />
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="180dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="115dp"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/clickedGreen"
-                app:cardCornerRadius="20dp"
-                app:cardPreventCornerOverlap="true"
+                android:layout_width="220dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="44dp"
+                app:cardBackgroundColor="@color/apfelgrün"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/ivBeetBG"
+                app:layout_constraintTop_toBottomOf="@+id/buttonBeetErstellen"
                 app:strokeColor="@color/black"
                 app:strokeWidth="2dp">
 
@@ -205,17 +237,32 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/tvBeet"
+                        android:id="@+id/tvErgebnissText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginEnd="14dp"
-                        android:text="Mein Beet"
+                        android:layout_marginStart="16dp"
+                        android:text="Pflanzen:"
                         android:textColor="@color/black"
-                        android:textSize="34sp"
-                        android:textStyle="bold|italic"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.512" />
+
+                    <TextView
+                        android:id="@+id/tvErgebniss"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="60dp"
+                        android:text="20"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.512" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 

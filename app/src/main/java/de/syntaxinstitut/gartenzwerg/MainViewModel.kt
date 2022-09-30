@@ -12,6 +12,7 @@ import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
 import de.syntaxinstitut.gartenzwerg.data.remote.PflanzenApi
 import de.syntaxinstitut.gartenzwerg.data.remote.Repository
 import kotlinx.coroutines.launch
+import kotlin.math.roundToInt
 
 const val TAG = "MainViewModel"
 
@@ -21,6 +22,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val database = getDatabase(application)
     private val repository = Repository(PflanzenApi, database)
+
+    lateinit var aktuellePflanze: Pflanzen
 
 
 
@@ -62,9 +65,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     //soll die fläche ausrechnen und an Hand von Pflanzen/m2 sagen wieviel Pflanzen der im dropdown
     //ausgewählten Pflanze auf das Beet passen und in tvErgebniss anzeigen
     //länge mal breite geteilt durch pflanzen/m2
-     fun pflanzenRechner(laenge:Int, breite:Int, pflanzenM2:Int) :Int {
+     fun pflanzenRechner(laenge:Double, breite:Double, pflanzenM2:Int) :Double {
         val flaeche = laenge * breite
-       return (flaeche * pflanzenM2).toInt()
+       return (flaeche * pflanzenM2).roundToInt().toDouble()
     }
 
 }

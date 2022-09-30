@@ -11,6 +11,7 @@ import de.syntaxinstitut.gartenzwerg.MainViewModel
 import de.syntaxinstitut.gartenzwerg.R
 import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentBeetBinding
+import java.lang.Double.parseDouble
 
 class BeetFragment : Fragment() {
 
@@ -69,11 +70,14 @@ class BeetFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonBeetErstellen.setOnClickListener{
-            val breite = Integer.parseInt(binding.evBeetBreite.text.toString())
-            val laenge = Integer.parseInt(binding.evBeetLaenge.text.toString())
+            val pflanzenString = binding.autoCompleteBeet.text
+            viewModel.aktuellePflanze = viewModel.pflanzen.value?.find { it.name == pflanzenString.toString() }!!
+            val breite = binding.evBeetBreite.text.toString()
+            val laenge = binding.evBeetLaenge.text.toString()
             if (breite != null || laenge != null){
-             val pflanzenErgebniss = viewModel.pflanzenRechner(laenge, breite, 30)
 
+                val ergebnis = viewModel.pflanzenRechner(laenge.toDouble(), breite.toDouble(), viewModel.aktuellePflanze.pflanzenProQMeter)
+                binding.tvErgebniss.text = ergebnis.toString()
             }
         }
     }

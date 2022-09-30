@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.activityViewModels
 import de.syntaxinstitut.gartenzwerg.MainViewModel
 import de.syntaxinstitut.gartenzwerg.R
+import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentBeetBinding
 
 class BeetFragment : Fragment() {
@@ -35,10 +36,25 @@ class BeetFragment : Fragment() {
             }
             val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, namen)
             binding.autoCompleteBeet.setAdapter(arrayAdapter)
+            binding.autoCompleteBeet.text
+           // viewModel.currentPflanze.value = arrayAdapter.getPosition()
 
             //brauche currentPflanze für beet Rechnung (am besten mutableLivedata)
         }
     }
+
+/*    val spinner: Spinner = findViewById(R.id.spinner)
+// Create an ArrayAdapter using the string array and a default spinner layout
+    ArrayAdapter.createFromResource(
+    this,
+    R.array.planets_array,
+    android.R.layout.simple_spinner_item
+    ).also { adapter ->
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        // Apply the adapter to the spinner
+        spinner.adapter = adapter
+    }*/
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -56,7 +72,8 @@ class BeetFragment : Fragment() {
             val breite = Integer.parseInt(binding.evBeetBreite.text.toString())
             val laenge = Integer.parseInt(binding.evBeetLaenge.text.toString())
             if (breite != null || laenge != null){
-                viewModel.pflanzenRechner(laenge, breite, )
+             val pflanzenErgebniss = viewModel.pflanzenRechner(laenge, breite, 30)
+
             }
         }
     }

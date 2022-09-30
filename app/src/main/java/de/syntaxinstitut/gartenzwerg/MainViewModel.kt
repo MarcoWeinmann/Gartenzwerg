@@ -28,6 +28,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     //brauche currentPflanze für beet Rechnung (am besten mutableLivedata)
 
+    private val _currentPflanze = MutableLiveData<Pflanzen>()
+    val currentPflanze: LiveData<Pflanzen>
+    get() = _currentPflanze
+
     private val _loading = MutableLiveData<ApiStatus>()
     val loading: LiveData<ApiStatus>
     get() = _loading
@@ -60,7 +64,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     //länge mal breite geteilt durch pflanzen/m2
      fun pflanzenRechner(laenge:Int, breite:Int, pflanzenM2:Int) :Int {
         val flaeche = laenge * breite
-       return (flaeche / pflanzenM2).toInt()
+       return (flaeche * pflanzenM2).toInt()
     }
 
 }

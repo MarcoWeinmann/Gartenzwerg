@@ -63,10 +63,11 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="120dp"
             android:layout_height="50dp"
-            android:layout_marginStart="144dp"
+            android:layout_marginStart="142dp"
             android:layout_marginTop="10dp"
             app:cardBackgroundColor="@color/clickedGreen"
             app:cardCornerRadius="20dp"
+            app:cardElevation="20dp"
             app:cardPreventCornerOverlap="true"
             app:layout_constraintStart_toStartOf="@+id/materialToolbarHome"
             app:layout_constraintTop_toTopOf="parent"

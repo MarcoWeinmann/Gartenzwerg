@@ -50,6 +50,18 @@ class KalenderFragment : Fragment() {
         }
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.buttonKalenderAussaat.setOnClickListener{
+            kalenderAussaat()
+        }
+    }
+//Datasource?
+    //buttons mit saatzeit verbinden
+    private fun kalenderAussaat() {
+
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -60,5 +72,7 @@ class KalenderFragment : Fragment() {
         // Inflate the layout for this fragment
         return binding.root
     }
+
+
 
 }

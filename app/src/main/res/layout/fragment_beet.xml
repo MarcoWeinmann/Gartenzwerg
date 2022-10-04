@@ -45,6 +45,7 @@
                 android:layout_marginTop="10dp"
                 app:cardBackgroundColor="@color/clickedGreen"
                 app:cardCornerRadius="20dp"
+                app:cardElevation="20dp"
                 app:cardPreventCornerOverlap="true"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/ivBeetBG"

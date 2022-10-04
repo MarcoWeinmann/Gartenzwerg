@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreenFragment"
+    android:background="@drawable/homescreen_background"
+    tools:rotation="90"
+    tools:scaleX="2"
+    >
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="361dp"
+        android:layout_height="306dp"
+        android:rotation="270"
+        android:src="@drawable/gartenzwerglogo"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="257dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

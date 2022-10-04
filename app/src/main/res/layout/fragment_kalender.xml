@@ -42,17 +42,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <CalendarView
-                android:id="@+id/calendarView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="192dp"
-                android:background="@color/apfelgrün"
-                app:layout_constraintEnd_toEndOf="@+id/ivKalenderBG"
-                app:layout_constraintHorizontal_bias="0.491"
-                app:layout_constraintStart_toStartOf="@+id/ivKalenderBG"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="191dp"
@@ -88,6 +77,7 @@
                 android:layout_marginTop="10dp"
                 app:cardBackgroundColor="@color/clickedGreen"
                 app:cardCornerRadius="20dp"
+                app:cardElevation="20dp"
                 app:cardPreventCornerOverlap="true"
                 app:layout_constraintStart_toStartOf="@+id/toolbar"
                 app:layout_constraintTop_toTopOf="@+id/ivKalenderBG"
@@ -146,6 +136,198 @@
                 app:layout_constraintStart_toEndOf="@+id/buttonKalenderAussaat"
                 app:strokeColor="@color/black"
                 app:strokeWidth="2dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="300dp"
+                app:cardBackgroundColor="@color/apfelgrün"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:stretchColumns="*"
+                    android:shrinkColumns="*">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_weight=".83"
+                            android:text="Jan" />
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Feb"
+                            android:layout_weight=".83"/>
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Mär"
+                            android:layout_weight=".83"/>
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Apr"
+                            android:layout_weight=".83"/>
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Mai"
+                            android:layout_weight=".83"/>
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Jun"
+                            android:layout_weight=".83"/>
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Jul"
+                            android:layout_weight=".83"/>
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Aug"
+                            android:layout_weight=".83"/>
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Sep"
+                            android:layout_weight=".83"/>
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Okt"
+                            android:layout_weight=".83"/>
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Nov"
+                            android:layout_weight=".83"/>
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Dez"
+                            android:layout_weight=".83"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/button3"
+                            android:layout_width="30dp"
+                            android:layout_height="180dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/button4"
+                            android:layout_width="30dp"
+                            android:layout_height="180dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/button5"
+                            android:layout_width="30dp"
+                            android:layout_height="180dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/button6"
+                            android:layout_width="30dp"
+                            android:layout_height="180dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/button7"
+                            android:layout_width="30dp"
+                            android:layout_height="180dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/button8"
+                            android:layout_width="30dp"
+                            android:layout_height="180dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/button9"
+                            android:layout_width="30dp"
+                            android:layout_height="180dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/button10"
+                            android:layout_width="30dp"
+                            android:layout_height="180dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/button11"
+                            android:layout_width="30dp"
+                            android:layout_height="180dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/button12"
+                            android:layout_width="30dp"
+                            android:layout_height="180dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/button13"
+                            android:layout_width="30dp"
+                            android:layout_height="180dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/button14"
+                            android:layout_width="30dp"
+                            android:layout_height="180dp"
+                            android:layout_marginRight="3dp" />
+                    </TableRow>
+
+                </TableLayout>
+
+            </androidx.cardview.widget.CardView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

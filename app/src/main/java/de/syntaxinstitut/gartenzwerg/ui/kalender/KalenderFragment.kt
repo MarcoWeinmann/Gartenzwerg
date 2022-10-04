@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.fragment.app.activityViewModels
+import de.syntaxinstitut.gartenzwerg.MainViewModel
 import de.syntaxinstitut.gartenzwerg.R
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentKalenderBinding
 
@@ -14,6 +16,8 @@ class KalenderFragment : Fragment() {
 
     private lateinit var binding: FragmentKalenderBinding
 
+    private val viewModel: MainViewModel by activityViewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,12 +25,29 @@ class KalenderFragment : Fragment() {
 
         }
     }
-    //Dropdownmenu
+   /* //Dropdownmenu alt
     override fun onResume() {
         super.onResume()
         val gemuese = resources.getStringArray(R.array.Gemuese)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, gemuese)
         binding.autoCompleteTextView.setAdapter(arrayAdapter)
+    }*/
+
+    //Dropdownmenu
+    override fun onResume() {
+        super.onResume()
+        viewModel.pflanzen.observe(
+            viewLifecycleOwner
+        ){
+            val namen = mutableListOf<String>()
+            for(pflanze in it){
+                namen.add(pflanze.name)
+            }
+            val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, namen)
+            binding.autoCompleteKalender.setAdapter(arrayAdapter)
+            binding.autoCompleteKalender.text
+
+        }
     }
 
     override fun onCreateView(

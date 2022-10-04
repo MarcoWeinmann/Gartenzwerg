@@ -67,7 +67,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView"
+                    android:id="@+id/autoCompleteKalender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

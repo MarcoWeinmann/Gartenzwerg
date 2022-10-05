@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreenFragment"
@@ -12,11 +12,11 @@
     >
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="361dp"
-        android:layout_height="306dp"
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:rotation="270"
-        android:src="@drawable/gartenzwerglogo"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="257dp" />
+        android:src="@drawable/gartenzwerg_logo"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="169dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

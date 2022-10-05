@@ -252,74 +252,74 @@
                         android:layout_height="match_parent">
 
                         <Button
-                            android:id="@+id/button3"
+                            android:id="@+id/bJan"
                             android:layout_width="30dp"
                             android:layout_height="180dp"
                             android:layout_marginLeft="2dp"
                             android:layout_marginRight="3dp" />
 
                         <Button
-                            android:id="@+id/button4"
+                            android:id="@+id/bFeb"
                             android:layout_width="30dp"
                             android:layout_height="180dp"
                             android:layout_marginRight="3dp" />
 
                         <Button
-                            android:id="@+id/button5"
+                            android:id="@+id/bMär"
                             android:layout_width="30dp"
                             android:layout_height="180dp"
                             android:layout_marginRight="3dp" />
 
                         <Button
-                            android:id="@+id/button6"
+                            android:id="@+id/bApr"
                             android:layout_width="30dp"
                             android:layout_height="180dp"
                             android:layout_marginRight="3dp" />
 
                         <Button
-                            android:id="@+id/button7"
+                            android:id="@+id/bMai"
                             android:layout_width="30dp"
                             android:layout_height="180dp"
                             android:layout_marginRight="3dp" />
 
                         <Button
-                            android:id="@+id/button8"
+                            android:id="@+id/bJun"
                             android:layout_width="30dp"
                             android:layout_height="180dp"
                             android:layout_marginRight="3dp" />
 
                         <Button
-                            android:id="@+id/button9"
+                            android:id="@+id/bJul"
                             android:layout_width="30dp"
                             android:layout_height="180dp"
                             android:layout_marginRight="3dp" />
 
                         <Button
-                            android:id="@+id/button10"
+                            android:id="@+id/bAug"
                             android:layout_width="30dp"
                             android:layout_height="180dp"
                             android:layout_marginRight="3dp" />
 
                         <Button
-                            android:id="@+id/button11"
+                            android:id="@+id/bSep"
                             android:layout_width="30dp"
                             android:layout_height="180dp"
                             android:layout_marginRight="3dp" />
 
                         <Button
-                            android:id="@+id/button12"
+                            android:id="@+id/bOkt"
                             android:layout_width="30dp"
                             android:layout_height="180dp"
                             android:layout_marginRight="3dp" />
 
                         <Button
-                            android:id="@+id/button13"
+                            android:id="@+id/bNov"
                             android:layout_width="30dp"
                             android:layout_height="180dp"
                             android:layout_marginRight="3dp" />
 
                         <Button
-                            android:id="@+id/button14"
+                            android:id="@+id/bDez"
                             android:layout_width="30dp"
                             android:layout_height="180dp"
                             android:layout_marginRight="3dp" />

@@ -54,6 +54,8 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        //Substring für int zu string anzeige
+
         viewmodel.pflanzen.observe(
             viewLifecycleOwner,
             Observer {list ->

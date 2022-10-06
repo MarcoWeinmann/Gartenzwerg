@@ -10,5 +10,7 @@
     <color name="apfelgrün">#BFCF45</color>
     <color name="buttonlila">#AC5FA1</color>
     <color name="clickedGreen">#689F38</color>
+    <color name="orange">#FFA000</color>
+    <color name="kalendergrün">#0097A7</color>
 
 </resources>

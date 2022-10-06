@@ -8,15 +8,17 @@
     tools:context=".SplashScreenFragment"
     android:background="@drawable/homescreen_background"
     tools:rotation="90"
-    tools:scaleX="2"
-    >
+    tools:scaleX="2">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/ivSplash"
+        android:layout_width="356dp"
+        android:layout_height="272dp"
+        android:layout_marginTop="236dp"
         android:rotation="270"
-        android:src="@drawable/gartenzwerg_logo"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="169dp" />
+        android:src="@drawable/gartenzwerg_logo3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

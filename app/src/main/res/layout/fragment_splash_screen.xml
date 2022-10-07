@@ -5,9 +5,8 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreenFragment"
     android:background="@drawable/homescreen_background"
-    tools:rotation="90"
+    tools:context=".SplashScreenFragment"
     tools:scaleX="2">
 
     <ImageView
@@ -16,6 +15,7 @@
         android:layout_height="272dp"
         android:layout_marginTop="236dp"
         android:rotation="270"
+        android:scaleType="fitXY"
         android:src="@drawable/gartenzwerg_logo3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"

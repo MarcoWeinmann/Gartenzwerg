@@ -61,7 +61,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    //funktion für mein beet
+    //funktion für Beet-Rechner
     //soll die fläche ausrechnen und an Hand von Pflanzen/m2 sagen wieviel Pflanzen der im dropdown
     //ausgewählten Pflanze auf das Beet passen und in tvErgebniss anzeigen
     //länge mal breite geteilt durch pflanzen/m2

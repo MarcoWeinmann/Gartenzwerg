@@ -39,14 +39,16 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="180dp"
+                android:id="@+id/materialCardView3"
+                android:layout_width="220dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="115dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 app:cardBackgroundColor="@color/clickedGreen"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="20dp"
                 app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/ivBeetBG"
                 app:strokeColor="@color/black"
@@ -61,8 +63,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:layout_marginEnd="14dp"
-                        android:text="Mein Beet"
+                        android:layout_marginEnd="8dp"
+                        android:text="Beet-Rechner"
                         android:textColor="@color/black"
                         android:textSize="34sp"
                         android:textStyle="bold|italic"
@@ -71,11 +73,21 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/ToolbarBeet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </View>
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cvBeet"
                 android:layout_width="356dp"
-                android:layout_height="248dp"
-                android:layout_marginTop="36dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="100dp"
                 app:cardBackgroundColor="@color/apfelgrün"
                 app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -90,18 +102,6 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/tvBeetName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginTop="28dp"
-                        android:text="Name:"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
                         android:id="@+id/tvBeetLänge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -111,14 +111,14 @@
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvBeetName" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvBeetBreite"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="28dp"
+                        android:layout_marginTop="30dp"
                         android:text="Breite:"
                         android:textColor="@color/black"
                         android:textSize="20sp"
@@ -138,27 +138,15 @@
                         app:layout_constraintTop_toBottomOf="@+id/tvBeetBreite" />
 
                     <EditText
-                        android:id="@+id/evBeetName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="18dp"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.507"
-                        app:layout_constraintStart_toEndOf="@+id/tvBeetName"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <EditText
                         android:id="@+id/evBeetLaenge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="16dp"
                         android:ems="10"
                         android:inputType="number|numberDecimal"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/tvBeetLänge"
-                        app:layout_constraintTop_toBottomOf="@+id/evBeetName" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <EditText
                         android:id="@+id/evBeetBreite"
@@ -210,7 +198,7 @@
                 android:layout_marginTop="36dp"
                 android:backgroundTint="@color/buttonlila"
                 android:shadowColor="@color/black"
-                android:text="Beet erstellen"
+                android:text="Beet ausrechnen"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1,5 +1,6 @@
 package de.syntaxinstitut.gartenzwerg.ui.kalender
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.activityViewModels
 import de.syntaxinstitut.gartenzwerg.MainViewModel
 import de.syntaxinstitut.gartenzwerg.R
-import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentKalenderBinding
 
 
@@ -77,7 +78,7 @@ class KalenderFragment : Fragment() {
         val aussaatende = viewModel.aktuellePflanze.aussaatZeitEnde.toInt()
 
         // Liste von Buttons/Monate erstellt und auf buttons zugegriffen
-        val buttonList = mutableListOf<Button>()
+        val buttonList = mutableListOf<CardView>()
         buttonList.add(binding.bJan)
         buttonList.add(binding.bFeb)
         buttonList.add(binding.bMar)
@@ -90,6 +91,9 @@ class KalenderFragment : Fragment() {
         buttonList.add(binding.bOkt)
         buttonList.add(binding.bNov)
         buttonList.add(binding.bDez)
+
+        kalenderReset(buttonList)
+
         //geht durch aussaatstart und aussaatende
         for (i in aussaatstart - 1..aussaatende - 1) {
             //ändert die Farben der Buttons/Monate
@@ -103,12 +107,11 @@ class KalenderFragment : Fragment() {
                 it.name == binding.autoCompleteKalender.text
                     .toString()
             }!!
-
             val ernteStart = viewModel.aktuellePflanze.ernteZeitStart.toInt()
             val ernteEnde = viewModel.aktuellePflanze.ernteZeitEnde.toInt()
 
             // Liste von Buttons/Monate erstellt und auf buttons zugegriffen
-            val buttonList = mutableListOf<Button>()
+            val buttonList = mutableListOf<CardView>()
             buttonList.add(binding.bJan)
             buttonList.add(binding.bFeb)
             buttonList.add(binding.bMar)
@@ -122,12 +125,25 @@ class KalenderFragment : Fragment() {
             buttonList.add(binding.bNov)
             buttonList.add(binding.bDez)
 
+            kalenderReset(buttonList)
+
             //geht durch aussaatstart und aussaatende
             for (i in ernteStart - 1..ernteEnde - 1) {
                 //ändert die Farben der Buttons/Monate
                 buttonList[i].setBackgroundColor(R.color.orange)
             }
         }
+    }
+
+    fun kalenderReset(buttonList: MutableList<CardView>) {
+//        for (button in buttonList){
+//            button.setBackgroundColor(R.color.white)
+//        }
+
+       // for (button in buttonList){
+            buttonList[i].setBackgroundColor(R.color.kalendergrün)
+       // }
+
     }
 
     override fun onCreateView(

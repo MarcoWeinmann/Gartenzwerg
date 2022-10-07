@@ -1,6 +1,5 @@
 package de.syntaxinstitut.gartenzwerg.ui.kalender
 
-import android.content.res.ColorStateList
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
-import androidx.cardview.widget.CardView
 import androidx.fragment.app.activityViewModels
 import de.syntaxinstitut.gartenzwerg.MainViewModel
 import de.syntaxinstitut.gartenzwerg.R
@@ -28,22 +26,22 @@ class KalenderFragment : Fragment() {
 
         }
     }
-   /* //Dropdownmenu alt
-    override fun onResume() {
-        super.onResume()
-        val gemuese = resources.getStringArray(R.array.Gemuese)
-        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, gemuese)
-        binding.autoCompleteTextView.setAdapter(arrayAdapter)
-    }*/
+    /* //Dropdownmenu alt
+     override fun onResume() {
+         super.onResume()
+         val gemuese = resources.getStringArray(R.array.Gemuese)
+         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, gemuese)
+         binding.autoCompleteTextView.setAdapter(arrayAdapter)
+     }*/
 
     //Dropdownmenu
     override fun onResume() {
         super.onResume()
         viewModel.pflanzen.observe(
             viewLifecycleOwner
-        ){
+        ) {
             val namen = mutableListOf<String>()
-            for(pflanze in it){
+            for (pflanze in it) {
                 namen.add(pflanze.name)
             }
             val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, namen)
@@ -54,64 +52,30 @@ class KalenderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonKalenderAussaat.setOnClickListener{
+        binding.buttonKalenderAussaat.setOnClickListener {
             kalenderAussaat()
         }
-        binding.buttonKalenderErnte.setOnClickListener{
+        binding.buttonKalenderErnte.setOnClickListener {
             kalenderErnte()
         }
     }
 
 
-
-//Datasource?
+    //Datasource?
     //buttons mit saatzeit verbinden
     private fun kalenderAussaat() {
-    //string zu int
-    if (binding.autoCompleteKalender.text.toString() != "") {
-        viewModel.aktuellePflanze = viewModel.pflanzen.value?.find {
-            it.name == binding.autoCompleteKalender.text
-                .toString()
-        }!!
-
-        val aussaatstart = viewModel.aktuellePflanze.aussaatZeitStart.toInt()
-        val aussaatende = viewModel.aktuellePflanze.aussaatZeitEnde.toInt()
-
-        // Liste von Buttons/Monate erstellt und auf buttons zugegriffen
-        val buttonList = mutableListOf<CardView>()
-        buttonList.add(binding.bJan)
-        buttonList.add(binding.bFeb)
-        buttonList.add(binding.bMar)
-        buttonList.add(binding.bApr)
-        buttonList.add(binding.bMai)
-        buttonList.add(binding.bJun)
-        buttonList.add(binding.bJul)
-        buttonList.add(binding.bAug)
-        buttonList.add(binding.bSep)
-        buttonList.add(binding.bOkt)
-        buttonList.add(binding.bNov)
-        buttonList.add(binding.bDez)
-
-        kalenderReset(buttonList)
-
-        //geht durch aussaatstart und aussaatende
-        for (i in aussaatstart - 1..aussaatende - 1) {
-            //ändert die Farben der Buttons/Monate
-            buttonList[i].setBackgroundColor(R.color.clickedGreen)
-        }
-    }
-}
-     private fun kalenderErnte() {
+        //string zu int
         if (binding.autoCompleteKalender.text.toString() != "") {
             viewModel.aktuellePflanze = viewModel.pflanzen.value?.find {
                 it.name == binding.autoCompleteKalender.text
                     .toString()
             }!!
-            val ernteStart = viewModel.aktuellePflanze.ernteZeitStart.toInt()
-            val ernteEnde = viewModel.aktuellePflanze.ernteZeitEnde.toInt()
+
+            val aussaatstart = viewModel.aktuellePflanze.aussaatZeitStart.toInt()
+            val aussaatende = viewModel.aktuellePflanze.aussaatZeitEnde.toInt()
 
             // Liste von Buttons/Monate erstellt und auf buttons zugegriffen
-            val buttonList = mutableListOf<CardView>()
+            val buttonList = mutableListOf<Button>()
             buttonList.add(binding.bJan)
             buttonList.add(binding.bFeb)
             buttonList.add(binding.bMar)
@@ -125,7 +89,45 @@ class KalenderFragment : Fragment() {
             buttonList.add(binding.bNov)
             buttonList.add(binding.bDez)
 
-            kalenderReset(buttonList)
+            // kalenderReset(buttonList)
+
+            //geht durch aussaatstart und aussaatende
+            for (i in aussaatstart - 1..aussaatende - 1) {
+                //ändert die Farben der Buttons/Monate
+                buttonList[i].setBackgroundColor(R.color.clickedGreen)
+                binding.bDez.setBackgroundColor(R.color.white)
+            }
+        }
+    }
+
+    private fun kalenderErnte() {
+        if (binding.autoCompleteKalender.text.toString() != "") {
+            viewModel.aktuellePflanze = viewModel.pflanzen.value?.find {
+                it.name == binding.autoCompleteKalender.text
+                    .toString()
+            }!!
+            val ernteStart = viewModel.aktuellePflanze.ernteZeitStart.toInt()
+            val ernteEnde = viewModel.aktuellePflanze.ernteZeitEnde.toInt()
+
+            // Liste von Buttons/Monate erstellt und auf buttons zugegriffen
+            val buttonList = mutableListOf<Button>()
+            buttonList.add(binding.bJan)
+            buttonList.add(binding.bFeb)
+            buttonList.add(binding.bMar)
+            buttonList.add(binding.bApr)
+            buttonList.add(binding.bMai)
+            buttonList.add(binding.bJun)
+            buttonList.add(binding.bJul)
+            buttonList.add(binding.bAug)
+            buttonList.add(binding.bSep)
+            buttonList.add(binding.bOkt)
+            buttonList.add(binding.bNov)
+            buttonList.add(binding.bDez)
+
+            // kalenderReset(buttonList)
+
+            // binding.bJan.setBackgroundColor(R.color.color_state_list)
+            //binding.bJan.invalidate()
 
             //geht durch aussaatstart und aussaatende
             for (i in ernteStart - 1..ernteEnde - 1) {
@@ -135,14 +137,16 @@ class KalenderFragment : Fragment() {
         }
     }
 
-    fun kalenderReset(buttonList: MutableList<CardView>) {
-//        for (button in buttonList){
-//            button.setBackgroundColor(R.color.white)
-//        }
+    fun kalenderReset(buttonList: MutableList<Button>) {
+        for (button in buttonList) {
+            button.setBackgroundColor(R.color.kalenderblau)
+        }
 
-       // for (button in buttonList){
-            buttonList[i].setBackgroundColor(R.color.kalendergrün)
-       // }
+        // for (i in buttonList){
+        //     buttonList.setBackgroundColor(R.color.kalendergrün)
+
+
+        // }
 
     }
 

@@ -73,7 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Gemüse-Sorten"
+                    android:text="Gemüse-Sorten"
                     android:inputType="none"
                     android:paddingTop="16dp"
                     android:paddingBottom="16dp"
@@ -279,90 +279,90 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent">
 
-                        <com.google.android.material.card.MaterialCardView
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/bJan"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginLeft="2dp"
                             android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalendergrün" />
+                            android:backgroundTint="@color/kalenderblau" />
 
-                        <com.google.android.material.card.MaterialCardView
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/bFeb"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalendergrün" />
+                            android:backgroundTint="@color/kalenderblau" />
 
-                        <com.google.android.material.card.MaterialCardView
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/bMar"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalendergrün" />
+                            android:backgroundTint="@color/kalenderblau" />
 
-                        <com.google.android.material.card.MaterialCardView
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/bApr"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalendergrün" />
+                            android:backgroundTint="@color/clickedGreen" />
 
-                        <com.google.android.material.card.MaterialCardView
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/bMai"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalendergrün" />
+                            android:backgroundTint="@color/kalenderblau" />
 
-                        <com.google.android.material.card.MaterialCardView
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/bJun"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalendergrün" />
+                            android:backgroundTint="@color/kalenderblau" />
 
-                        <com.google.android.material.card.MaterialCardView
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/bJul"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalendergrün" />
+                            android:backgroundTint="@color/kalenderblau" />
 
-                        <com.google.android.material.card.MaterialCardView
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/bAug"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalendergrün" />
+                            android:backgroundTint="@color/kalenderblau" />
 
-                        <com.google.android.material.card.MaterialCardView
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/bSep"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalendergrün" />
+                            android:backgroundTint="@color/kalenderblau" />
 
-                        <com.google.android.material.card.MaterialCardView
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/bOkt"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalendergrün" />
+                            android:backgroundTint="@color/kalenderblau" />
 
-                        <com.google.android.material.card.MaterialCardView
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/bNov"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalendergrün" />
+                            android:backgroundTint="@color/kalenderblau" />
 
-                        <com.google.android.material.card.MaterialCardView
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/bDez"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalendergrün" />
+                            android:backgroundTint="@color/kalenderblau" />
                     </TableRow>
 
                 </TableLayout>

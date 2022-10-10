@@ -9,22 +9,17 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/black">
 
         <ImageView
             android:id="@+id/ivSplash"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="144dp"
-            android:layout_marginBottom="150dp"
-            android:rotation="0"
-            android:scaleType="fitCenter"
-            android:src="@drawable/gartenzwerg_logo3"
+            android:layout_width="291dp"
+            android:layout_height="538dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/gartenzwerg_logo_original" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

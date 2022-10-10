@@ -1,4 +1,4 @@
-package de.syntaxinstitut.gartenzwerg.ui.beet
+package de.syntaxinstitut.gartenzwerg.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,9 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.activityViewModels
 import de.syntaxinstitut.gartenzwerg.MainViewModel
 import de.syntaxinstitut.gartenzwerg.R
-import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentBeetBinding
-import java.lang.Double.parseDouble
 
 class BeetFragment : Fragment() {
 

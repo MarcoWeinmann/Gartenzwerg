@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
 import de.syntaxinstitut.gartenzwerg.databinding.ListItemBinding
-import de.syntaxinstitut.gartenzwerg.ui.home.HomeFragmentDirections
+import de.syntaxinstitut.gartenzwerg.ui.HomeFragmentDirections
 
 class AdapterHome(
 

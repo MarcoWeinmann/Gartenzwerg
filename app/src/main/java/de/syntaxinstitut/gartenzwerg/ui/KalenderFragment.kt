@@ -1,4 +1,4 @@
-package de.syntaxinstitut.gartenzwerg.ui.kalender
+package de.syntaxinstitut.gartenzwerg.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -29,13 +29,6 @@ class KalenderFragment : Fragment() {
 
         }
     }
-    /* //Dropdownmenu alt
-     override fun onResume() {
-         super.onResume()
-         val gemuese = resources.getStringArray(R.array.Gemuese)
-         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, gemuese)
-         binding.autoCompleteTextView.setAdapter(arrayAdapter)
-     }*/
 
     //Dropdownmenu
     override fun onResume() {
@@ -67,7 +60,7 @@ class KalenderFragment : Fragment() {
             kalenderErnte()
         }
 
-        // Liste von Buttons/Monate erstellt und auf buttons zugegriffen
+        //erstellt Liste von Buttons/Monate und greift auf buttons zu
 
         buttonList.add(binding.bJan)
         buttonList.add(binding.bFeb)
@@ -83,14 +76,9 @@ class KalenderFragment : Fragment() {
         buttonList.add(binding.bDez)
 
         kalenderReset(buttonList)
-
     }
 
-
-
-
-    //Datasource?
-    //buttons mit saatzeit verbinden
+    //zeigt Aussaat_Monate Grün an
     private fun kalenderAussaat() {
         //string zu int
         if (binding.autoCompleteKalender.text.toString() != "") {
@@ -113,6 +101,7 @@ class KalenderFragment : Fragment() {
         }
     }
 
+    //zeigt Ernte_Monate Orange an
     private fun kalenderErnte() {
         if (binding.autoCompleteKalender.text.toString() != "") {
             viewModel.aktuellePflanze = viewModel.pflanzen.value?.find {
@@ -133,17 +122,11 @@ class KalenderFragment : Fragment() {
         }
     }
 
+    //setzt Farben zurück auf Blau
     fun kalenderReset(buttonList: MutableList<Button>) {
         for (button in buttonList) {
             button.setBackgroundColor(resources.getColor(R.color.kalenderblau))
         }
-
-        // for (i in buttonList){
-        //     buttonList.setBackgroundColor(R.color.kalendergrün)
-
-
-        // }
-
     }
 
     override fun onCreateView(

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import androidx.fragment.app.activityViewModels
@@ -18,6 +19,8 @@ class KalenderFragment : Fragment() {
     private lateinit var binding: FragmentKalenderBinding
 
     private val viewModel: MainViewModel by activityViewModels()
+
+   private val buttonList = mutableListOf<Button>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,18 +50,43 @@ class KalenderFragment : Fragment() {
             val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, namen)
             binding.autoCompleteKalender.setAdapter(arrayAdapter)
 
+            binding.autoCompleteKalender.onItemClickListener =
+                AdapterView.OnItemClickListener { adapter, view, position, arg ->
+                    kalenderReset(buttonList)
+                }
         }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.buttonKalenderAussaat.setOnClickListener {
             kalenderAussaat()
         }
         binding.buttonKalenderErnte.setOnClickListener {
             kalenderErnte()
         }
+
+        // Liste von Buttons/Monate erstellt und auf buttons zugegriffen
+
+        buttonList.add(binding.bJan)
+        buttonList.add(binding.bFeb)
+        buttonList.add(binding.bMar)
+        buttonList.add(binding.bApr)
+        buttonList.add(binding.bMai)
+        buttonList.add(binding.bJun)
+        buttonList.add(binding.bJul)
+        buttonList.add(binding.bAug)
+        buttonList.add(binding.bSep)
+        buttonList.add(binding.bOkt)
+        buttonList.add(binding.bNov)
+        buttonList.add(binding.bDez)
+
+        kalenderReset(buttonList)
+
     }
+
+
 
 
     //Datasource?
@@ -74,28 +102,13 @@ class KalenderFragment : Fragment() {
             val aussaatstart = viewModel.aktuellePflanze.aussaatZeitStart.toInt()
             val aussaatende = viewModel.aktuellePflanze.aussaatZeitEnde.toInt()
 
-            // Liste von Buttons/Monate erstellt und auf buttons zugegriffen
-            val buttonList = mutableListOf<Button>()
-            buttonList.add(binding.bJan)
-            buttonList.add(binding.bFeb)
-            buttonList.add(binding.bMar)
-            buttonList.add(binding.bApr)
-            buttonList.add(binding.bMai)
-            buttonList.add(binding.bJun)
-            buttonList.add(binding.bJul)
-            buttonList.add(binding.bAug)
-            buttonList.add(binding.bSep)
-            buttonList.add(binding.bOkt)
-            buttonList.add(binding.bNov)
-            buttonList.add(binding.bDez)
 
-            // kalenderReset(buttonList)
+             kalenderReset(buttonList)
 
-            //geht durch aussaatstart und aussaatende
+            //geht durch aussaatstart und aussaatende (Api)
             for (i in aussaatstart - 1..aussaatende - 1) {
                 //ändert die Farben der Buttons/Monate
-                buttonList[i].setBackgroundColor(R.color.clickedGreen)
-                binding.bDez.setBackgroundColor(R.color.white)
+                buttonList[i].setBackgroundColor(resources.getColor(R.color.clickedGreen))
             }
         }
     }
@@ -109,37 +122,20 @@ class KalenderFragment : Fragment() {
             val ernteStart = viewModel.aktuellePflanze.ernteZeitStart.toInt()
             val ernteEnde = viewModel.aktuellePflanze.ernteZeitEnde.toInt()
 
-            // Liste von Buttons/Monate erstellt und auf buttons zugegriffen
-            val buttonList = mutableListOf<Button>()
-            buttonList.add(binding.bJan)
-            buttonList.add(binding.bFeb)
-            buttonList.add(binding.bMar)
-            buttonList.add(binding.bApr)
-            buttonList.add(binding.bMai)
-            buttonList.add(binding.bJun)
-            buttonList.add(binding.bJul)
-            buttonList.add(binding.bAug)
-            buttonList.add(binding.bSep)
-            buttonList.add(binding.bOkt)
-            buttonList.add(binding.bNov)
-            buttonList.add(binding.bDez)
 
-            // kalenderReset(buttonList)
+             kalenderReset(buttonList)
 
-            // binding.bJan.setBackgroundColor(R.color.color_state_list)
-            //binding.bJan.invalidate()
-
-            //geht durch aussaatstart und aussaatende
+            //geht durch aussaatstart und aussaatende (Api)
             for (i in ernteStart - 1..ernteEnde - 1) {
                 //ändert die Farben der Buttons/Monate
-                buttonList[i].setBackgroundColor(R.color.orange)
+                buttonList[i].setBackgroundColor(resources.getColor(R.color.orange))
             }
         }
     }
 
     fun kalenderReset(buttonList: MutableList<Button>) {
         for (button in buttonList) {
-            button.setBackgroundColor(R.color.kalenderblau)
+            button.setBackgroundColor(resources.getColor(R.color.kalenderblau))
         }
 
         // for (i in buttonList){

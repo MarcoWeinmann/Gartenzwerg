@@ -53,7 +53,7 @@
             </View>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout"
+                android:id="@+id/textInputLayoutKalender"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="191dp"
                 android:layout_height="52dp"
@@ -130,7 +130,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/buttonKalenderErnte"
                 app:layout_constraintStart_toStartOf="parent"
-                app:rippleColor="@color/buttonlila"
                 app:strokeColor="@color/black"
                 app:strokeWidth="2dp" />
 
@@ -279,90 +278,79 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent">
 
-                        <androidx.appcompat.widget.AppCompatButton
+                        <Button
                             android:id="@+id/bJan"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginLeft="2dp"
-                            android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalenderblau" />
+                            android:layout_marginRight="3dp" />
 
-                        <androidx.appcompat.widget.AppCompatButton
+                        <Button
                             android:id="@+id/bFeb"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
-                            android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalenderblau" />
+                            android:layout_marginRight="3dp" />
 
-                        <androidx.appcompat.widget.AppCompatButton
+                        <Button
                             android:id="@+id/bMar"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
-                            android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalenderblau" />
+                            android:layout_marginRight="3dp" />
 
-                        <androidx.appcompat.widget.AppCompatButton
+                        <Button
                             android:id="@+id/bApr"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
-                            android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/clickedGreen" />
+                            android:layout_marginRight="3dp" />
 
-                        <androidx.appcompat.widget.AppCompatButton
+                        <Button
                             android:id="@+id/bMai"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
-                            android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalenderblau" />
+                            android:layout_marginRight="3dp" />
 
-                        <androidx.appcompat.widget.AppCompatButton
+                        <Button
                             android:id="@+id/bJun"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
-                            android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalenderblau" />
+                            android:layout_marginRight="3dp" />
 
-                        <androidx.appcompat.widget.AppCompatButton
+                        <Button
                             android:id="@+id/bJul"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
                             android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalenderblau" />
+                            />
 
-                        <androidx.appcompat.widget.AppCompatButton
+                        <Button
                             android:id="@+id/bAug"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
-                            android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalenderblau" />
+                            android:layout_marginRight="3dp" />
 
-                        <androidx.appcompat.widget.AppCompatButton
+                        <Button
                             android:id="@+id/bSep"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
-                            android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalenderblau" />
+                            android:layout_marginRight="3dp" />
 
-                        <androidx.appcompat.widget.AppCompatButton
+                        <Button
                             android:id="@+id/bOkt"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
-                            android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalenderblau" />
+                            android:layout_marginRight="3dp" />
 
-                        <androidx.appcompat.widget.AppCompatButton
+                        <Button
                             android:id="@+id/bNov"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
-                            android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalenderblau" />
+                            android:layout_marginRight="3dp" />
 
-                        <androidx.appcompat.widget.AppCompatButton
+                        <Button
                             android:id="@+id/bDez"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
-                            android:layout_marginRight="3dp"
-                            android:backgroundTint="@color/kalenderblau" />
+                            android:layout_marginRight="3dp" />
                     </TableRow>
 
                 </TableLayout>

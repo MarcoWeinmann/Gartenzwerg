@@ -7,7 +7,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <item name="colorAccent">@color/clickedGreen</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorAccent</item>
+        <item name="android:statusBarColor" tools:targetApi="l">#000000</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

@@ -122,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="48dp"
+                android:layout_marginBottom="90dp"
                 android:backgroundTint="@color/clickedGreen"
                 android:text="Aussaat"
                 android:textColor="@color/black"
@@ -139,7 +139,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="80dp"
-                android:layout_marginBottom="48dp"
+                android:layout_marginBottom="90dp"
                 android:backgroundTint="@color/orange"
                 android:text="Ernte"
                 android:textColor="@color/black"
@@ -152,10 +152,10 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
-                android:layout_height="320dp"
+                android:layout_height="310dp"
                 android:layout_marginStart="3dp"
                 android:layout_marginEnd="3dp"
-                android:layout_marginBottom="190dp"
+                android:layout_marginBottom="210dp"
                 app:cardBackgroundColor="@color/apfelgrün"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -319,8 +319,7 @@
                             android:id="@+id/bJul"
                             android:layout_width="30dp"
                             android:layout_height="280dp"
-                            android:layout_marginRight="3dp"
-                            />
+                            android:layout_marginRight="3dp" />
 
                         <Button
                             android:id="@+id/bAug"

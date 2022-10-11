@@ -7,11 +7,12 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import de.syntaxinstitut.gartenzwerg.databinding.FragmentBeetBinding
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentSplashScreenBinding
 
 
@@ -32,6 +33,7 @@ class SplashScreenFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         binding = FragmentSplashScreenBinding.inflate(inflater, container, false)
         return binding.root
@@ -43,19 +45,25 @@ class SplashScreenFragment : Fragment() {
 
 
         splashAnimation(binding.ivSplash)
+        fadeAnimation()
         Handler().postDelayed({
 
             findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToLoginFragment())
-        }, 4000)
+        }, 3000)
     }
 
     private fun splashAnimation(imageView: ImageView){
         val rotator = ObjectAnimator.ofFloat(imageView, View.ROTATION_Y, 0f, 360f)
-        rotator.duration = 2500
-
+        rotator.duration = 1900
 
         val set = AnimatorSet()
         set.playTogether(rotator)
         set.start()
+    }
+
+    private fun fadeAnimation(){
+        val animator = ObjectAnimator.ofFloat(binding.ivSplash, View.ALPHA, 0f)
+        animator.duration = 2500
+        animator.start()
     }
 }

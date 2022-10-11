@@ -9,6 +9,7 @@ import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
 
 @Database(entities = [Pflanzen::class], version = 1)
 abstract class PflanzenDatabase : RoomDatabase() {
+
     //verknüpft Database mit Dao Interface
     abstract val pflanzenDatabaseDao: PflanzenDatabaseDao
 }

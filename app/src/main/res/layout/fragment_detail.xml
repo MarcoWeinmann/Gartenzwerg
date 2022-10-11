@@ -128,7 +128,7 @@
                                     android:id="@+id/tvDetailAussaat"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="16dp"
+                                    android:layout_marginStart="13dp"
                                     android:layout_marginBottom="6dp"
                                     android:text="Apr - Jun"
                                     android:textColor="@color/black"

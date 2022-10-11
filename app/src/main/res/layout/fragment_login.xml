@@ -92,7 +92,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp" />
 
         <Button
             android:id="@+id/Sign_up_Button1"
@@ -106,20 +108,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_Login" />
-
-        <Button
-            android:id="@+id/Without_Login_Button"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="@color/buttonlila"
-            android:text="without Login"
-            android:textColor="@color/black"
-            app:cornerRadius="36dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Sign_up_Button1" />
+            app:layout_constraintTop_toBottomOf="@+id/button_Login"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="140dp"

@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         navController = Navigation.findNavController(this, R.id.main_host)
         bottomNavigation.setupWithNavController(navController)
 
-        //val navMenu = findViewById(R.menu.nav_menu)
     }
     fun hideBottombar() {
         binding.bottomNavigationView.visibility = View.GONE

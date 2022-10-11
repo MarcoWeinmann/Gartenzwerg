@@ -14,10 +14,6 @@ class Repository(private val pflanzenApi: PflanzenApi, private val database: Pfl
 
     val pflanzenList: LiveData<List<Pflanzen>> = database.pflanzenDatabaseDao.getAll()
 
-  /*  private val _pflanzenList = MutableLiveData<List<Pflanzen>>()
-    val pflanzenList: LiveData<List<Pflanzen>>
-    get() = _pflanzenList*/
-
     suspend fun getPflanzen() {
         withContext(Dispatchers.IO) {
             val newPflanzenList = pflanzenApi.retrofitService.getPflanzen()

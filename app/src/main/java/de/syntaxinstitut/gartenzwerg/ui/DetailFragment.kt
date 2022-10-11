@@ -1,4 +1,4 @@
-package de.syntaxinstitut.gartenzwerg.ui.detail
+package de.syntaxinstitut.gartenzwerg.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -54,6 +54,8 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        //Substring für int zu string anzeige
+
         viewmodel.pflanzen.observe(
             viewLifecycleOwner,
             Observer {list ->
@@ -70,22 +72,39 @@ class DetailFragment : Fragment() {
                     binding.ivDetail.load(imgUri)
 
                     if (pflanzen.aussaatZeitStart == pflanzen.aussaatZeitEnde){
-                        binding.tvDetailAussaat.text = "${pflanzen.aussaatZeitStart}"
+                        binding.tvDetailAussaat.text = "${convertDate(pflanzen.aussaatZeitStart)}"
                     }else{
-                        binding.tvDetailAussaat.text = "${pflanzen.aussaatZeitStart}-${pflanzen.aussaatZeitEnde}"
+                        binding.tvDetailAussaat.text = "${convertDate(pflanzen.aussaatZeitStart)} - ${convertDate(pflanzen.aussaatZeitEnde)}"
                     }
 
                     if (pflanzen.ernteZeitStart == pflanzen.ernteZeitEnde){
-                        binding.tvDetailErnte.text = "${pflanzen.ernteZeitStart}"
+                        binding.tvDetailErnte.text = "${convertDate(pflanzen.ernteZeitStart)}"
                     }else{
-                        binding.tvDetailErnte.text = "${pflanzen.ernteZeitStart}-${pflanzen.ernteZeitEnde}"
+                        binding.tvDetailErnte.text = "${convertDate(pflanzen.ernteZeitStart)} - ${convertDate(pflanzen.ernteZeitEnde)}"
                     }
                 }
 
             }
         )
 
+    }
 
+    private fun convertDate(date: String) :String {
+        when(date){
+            "1"-> return "Jan"
+            "2"-> return "Feb"
+            "3"-> return "Mär"
+            "4"-> return "Apr"
+            "5"-> return "Mai"
+            "6"-> return "Jun"
+            "7"-> return "Jul"
+            "8"-> return "Aug"
+            "9"-> return "Sep"
+            "10"-> return "Okt"
+            "11"-> return "Nov"
+            "12"-> return "Dez"
+        }
+        return ""
     }
 
 }

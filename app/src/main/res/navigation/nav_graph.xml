@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/splashScreenFragment">
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="de.syntaxinstitut.gartenzwerg.ui.home.HomeFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.ui.HomeFragment"
         android:label="homeFragment"
         tools:layout="@layout/fragment_home">
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/kalenderFragment"
-        android:name="de.syntaxinstitut.gartenzwerg.ui.kalender.KalenderFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.ui.KalenderFragment"
         android:label="fragment_kalender"
         tools:layout="@layout/fragment_kalender" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="de.syntaxinstitut.gartenzwerg.ui.login.LoginFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.ui.auth.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="de.syntaxinstitut.gartenzwerg.ui.detail.DetailFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.ui.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail">
         <argument
@@ -66,12 +66,21 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="de.syntaxinstitut.gartenzwerg.ui.signup.SignUpFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.ui.auth.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up" />
     <fragment
         android:id="@+id/beetFragment"
-        android:name="de.syntaxinstitut.gartenzwerg.ui.beet.BeetFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.ui.BeetFragment"
         android:label="fragment_beet"
         tools:layout="@layout/fragment_beet" />
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="de.syntaxinstitut.gartenzwerg.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

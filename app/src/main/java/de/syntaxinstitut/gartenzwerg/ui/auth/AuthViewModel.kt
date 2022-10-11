@@ -1,4 +1,4 @@
-package de.syntaxinstitut.gartenzwerg.ui.signup
+package de.syntaxinstitut.gartenzwerg.ui.auth
 
 import android.app.Application
 import android.util.Log

@@ -1,10 +1,9 @@
-package de.syntaxinstitut.gartenzwerg.ui.login
+package de.syntaxinstitut.gartenzwerg.ui.auth
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -13,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.gartenzwerg.MainActivity
 import de.syntaxinstitut.gartenzwerg.R
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentLoginBinding
-import de.syntaxinstitut.gartenzwerg.ui.signup.AuthViewModel
 
 
 class LoginFragment : Fragment() {

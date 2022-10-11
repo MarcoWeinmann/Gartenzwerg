@@ -1,4 +1,4 @@
-package de.syntaxinstitut.gartenzwerg.ui.signup
+package de.syntaxinstitut.gartenzwerg.ui.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

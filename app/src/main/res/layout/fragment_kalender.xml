@@ -10,7 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.kalender.KalenderFragment">
+        tools:context=".ui.KalenderFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
-                android:layout_width="409dp"
+                android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:background="@color/apfelgrün"
                 android:minHeight="?attr/actionBarSize"
@@ -42,18 +42,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <CalendarView
-                android:id="@+id/calendarView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="192dp"
-                android:background="@color/apfelgrün"
-                app:layout_constraintEnd_toEndOf="@+id/ivKalenderBG"
-                app:layout_constraintHorizontal_bias="0.491"
-                app:layout_constraintStart_toStartOf="@+id/ivKalenderBG"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </View>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutKalender"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="191dp"
                 android:layout_height="52dp"
@@ -61,20 +61,22 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="160dp"
                 app:boxBackgroundColor="@color/apfelgrün"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidth="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView"
+                    android:id="@+id/autoCompleteKalender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:text="Gemüse-Sorten"
                     android:inputType="none"
                     android:paddingTop="16dp"
                     android:paddingBottom="16dp"
-                    android:text="Gemüse-Sorten"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -82,12 +84,14 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView2"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="128dp"
                 android:layout_marginTop="10dp"
                 app:cardBackgroundColor="@color/clickedGreen"
                 app:cardCornerRadius="20dp"
+                app:cardElevation="20dp"
                 app:cardPreventCornerOverlap="true"
                 app:layout_constraintStart_toStartOf="@+id/toolbar"
                 app:layout_constraintTop_toTopOf="@+id/ivKalenderBG"
@@ -118,15 +122,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="48dp"
-                android:backgroundTint="@color/buttonlila"
+                android:layout_marginBottom="90dp"
+                android:backgroundTint="@color/clickedGreen"
                 android:text="Aussaat"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/buttonKalenderErnte"
                 app:layout_constraintStart_toStartOf="parent"
-                app:rippleColor="@color/buttonlila"
                 app:strokeColor="@color/black"
                 app:strokeWidth="2dp" />
 
@@ -136,8 +139,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="80dp"
-                android:layout_marginBottom="48dp"
-                android:backgroundTint="@color/buttonlila"
+                android:layout_marginBottom="90dp"
+                android:backgroundTint="@color/orange"
                 android:text="Ernte"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -146,6 +149,212 @@
                 app:layout_constraintStart_toEndOf="@+id/buttonKalenderAussaat"
                 app:strokeColor="@color/black"
                 app:strokeWidth="2dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="310dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="210dp"
+                app:cardBackgroundColor="@color/apfelgrün"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:shrinkColumns="*"
+                    android:stretchColumns="*">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_weight=".83"
+                            android:text="Jan"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".83"
+                            android:text="Feb"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".83"
+                            android:text="Mär"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".83"
+                            android:text="Apr"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".83"
+                            android:text="Mai"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".83"
+                            android:text="Jun"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".83"
+                            android:text="Jul"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".83"
+                            android:text="Aug"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".83"
+                            android:text="Sep"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".83"
+                            android:text="Okt"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".83"
+                            android:text="Nov"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".83"
+                            android:text="Dez"
+                            android:textColor="@color/black" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/bJan"
+                            android:layout_width="30dp"
+                            android:layout_height="280dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/bFeb"
+                            android:layout_width="30dp"
+                            android:layout_height="280dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/bMar"
+                            android:layout_width="30dp"
+                            android:layout_height="280dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/bApr"
+                            android:layout_width="30dp"
+                            android:layout_height="280dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/bMai"
+                            android:layout_width="30dp"
+                            android:layout_height="280dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/bJun"
+                            android:layout_width="30dp"
+                            android:layout_height="280dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/bJul"
+                            android:layout_width="30dp"
+                            android:layout_height="280dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/bAug"
+                            android:layout_width="30dp"
+                            android:layout_height="280dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/bSep"
+                            android:layout_width="30dp"
+                            android:layout_height="280dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/bOkt"
+                            android:layout_width="30dp"
+                            android:layout_height="280dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/bNov"
+                            android:layout_width="30dp"
+                            android:layout_height="280dp"
+                            android:layout_marginRight="3dp" />
+
+                        <Button
+                            android:id="@+id/bDez"
+                            android:layout_width="30dp"
+                            android:layout_height="280dp"
+                            android:layout_marginRight="3dp" />
+                    </TableRow>
+
+                </TableLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package de.syntaxinstitut.gartenzwerg.ui.home
+package de.syntaxinstitut.gartenzwerg.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,7 @@ import de.syntaxinstitut.gartenzwerg.R
 import de.syntaxinstitut.gartenzwerg.adapter.AdapterHome
 import de.syntaxinstitut.gartenzwerg.databinding.FragmentHomeBinding
 import de.syntaxinstitut.gartenzwerg.MainViewModel
-import de.syntaxinstitut.gartenzwerg.ui.signup.AuthViewModel
+import de.syntaxinstitut.gartenzwerg.ui.auth.AuthViewModel
 
 class HomeFragment : Fragment() {
 

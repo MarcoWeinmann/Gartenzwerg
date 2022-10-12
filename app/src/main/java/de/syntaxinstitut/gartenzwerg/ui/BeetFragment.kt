@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import de.syntaxinstitut.gartenzwerg.MainViewModel
 import de.syntaxinstitut.gartenzwerg.R
@@ -53,15 +54,29 @@ class BeetFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonBeetErstellen.setOnClickListener{
-            val pflanzenString = binding.autoCompleteBeet.text
-            viewModel.aktuellePflanze = viewModel.pflanzen.value?.find { it.name == pflanzenString.toString() }!!
-            val breite = binding.evBeetBreite.text.toString()
-            val laenge = binding.evBeetLaenge.text.toString()
-            if (breite != null || laenge != null){
+        binding.buttonBeetErstellen.setOnClickListener {
+            if (binding.autoCompleteBeet.text.toString() != "Gemüse-Sorten") {
 
-                val ergebnis = viewModel.pflanzenRechner(laenge.toDouble(), breite.toDouble(), viewModel.aktuellePflanze.pflanzenProQMeter)
-                binding.tvErgebniss.text = ergebnis.toString()
+                val pflanzenString = binding.autoCompleteBeet.text
+                viewModel.aktuellePflanze =
+                    viewModel.pflanzen.value?.find { it.name == pflanzenString.toString() }!!
+                val breite = binding.evBeetBreite.text.toString()
+                val laenge = binding.evBeetLaenge.text.toString()
+                if (breite.isNotEmpty() || laenge.isNotEmpty()) {
+
+                    val ergebnis = viewModel.pflanzenRechner(
+                        laenge.toDouble(),
+                        breite.toDouble(),
+                        viewModel.aktuellePflanze.pflanzenProQMeter
+                    )
+                    binding.tvErgebniss.text = ergebnis.toString()
+                }else {
+                    Toast.makeText(context, "Gebe Länge und Breite deines Beets ein.", Toast.LENGTH_SHORT).show()
+                }
+
+            }else {
+                Toast.makeText(context, "Wähle zuerst eine Gemüsesorte aus!", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }

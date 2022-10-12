@@ -27,10 +27,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     val pflanzen: LiveData<List<Pflanzen>> = repository.pflanzenList
 
-    private val _currentPflanze = MutableLiveData<Pflanzen>()
-    val currentPflanze: LiveData<Pflanzen>
-    get() = _currentPflanze
-
     private val _loading = MutableLiveData<ApiStatus>()
     val loading: LiveData<ApiStatus>
     get() = _loading
@@ -65,7 +61,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val flaeche = laenge * breite
        return (flaeche * pflanzenM2).roundToInt().toDouble()
     }
-
 }
 
 

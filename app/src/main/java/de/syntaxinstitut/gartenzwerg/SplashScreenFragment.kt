@@ -63,7 +63,7 @@ class SplashScreenFragment : Fragment() {
 
     private fun fadeAnimation(){
         val animator = ObjectAnimator.ofFloat(binding.ivSplash, View.ALPHA, 0f)
-        animator.duration = 2500
+        animator.duration = 2900
         animator.start()
     }
 }

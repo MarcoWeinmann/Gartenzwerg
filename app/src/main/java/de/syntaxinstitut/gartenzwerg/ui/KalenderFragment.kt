@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import de.syntaxinstitut.gartenzwerg.MainViewModel
 import de.syntaxinstitut.gartenzwerg.R
@@ -81,7 +82,9 @@ class KalenderFragment : Fragment() {
     //zeigt Aussaat_Monate Grün an
     private fun kalenderAussaat() {
         //string zu int
-        if (binding.autoCompleteKalender.text.toString() != "") {
+        if (binding.autoCompleteKalender.text.toString() != "Gemüse-Sorten") {
+
+
             viewModel.aktuellePflanze = viewModel.pflanzen.value?.find {
                 it.name == binding.autoCompleteKalender.text
                     .toString()
@@ -91,35 +94,41 @@ class KalenderFragment : Fragment() {
             val aussaatende = viewModel.aktuellePflanze.aussaatZeitEnde.toInt()
 
 
-             kalenderReset(buttonList)
+            kalenderReset(buttonList)
 
             //geht durch aussaatstart und aussaatende (Api)
             for (i in aussaatstart - 1..aussaatende - 1) {
                 //ändert die Farben der Buttons/Monate
                 buttonList[i].setBackgroundColor(resources.getColor(R.color.clickedGreen))
             }
+        } else {
+            Toast.makeText(context, "Wähle zuerst eine Gemüsesorte aus!", Toast.LENGTH_SHORT).show()
         }
     }
 
     //zeigt Ernte_Monate Orange an
     private fun kalenderErnte() {
-        if (binding.autoCompleteKalender.text.toString() != "") {
-            viewModel.aktuellePflanze = viewModel.pflanzen.value?.find {
-                it.name == binding.autoCompleteKalender.text
-                    .toString()
-            }!!
-            val ernteStart = viewModel.aktuellePflanze.ernteZeitStart.toInt()
-            val ernteEnde = viewModel.aktuellePflanze.ernteZeitEnde.toInt()
+        if (binding.autoCompleteKalender.text.toString() != "Gemüse-Sorten") {
+
+                viewModel.aktuellePflanze = viewModel.pflanzen.value?.find {
+                    it.name == binding.autoCompleteKalender.text
+                        .toString()
+                }!!
+                val ernteStart = viewModel.aktuellePflanze.ernteZeitStart.toInt()
+                val ernteEnde = viewModel.aktuellePflanze.ernteZeitEnde.toInt()
 
 
-             kalenderReset(buttonList)
+                kalenderReset(buttonList)
 
-            //geht durch aussaatstart und aussaatende (Api)
-            for (i in ernteStart - 1..ernteEnde - 1) {
-                //ändert die Farben der Buttons/Monate
-                buttonList[i].setBackgroundColor(resources.getColor(R.color.orange))
+                //geht durch aussaatstart und aussaatende (Api)
+                for (i in ernteStart - 1..ernteEnde - 1) {
+                    //ändert die Farben der Buttons/Monate
+                    buttonList[i].setBackgroundColor(resources.getColor(R.color.orange))
+                }
+            } else {
+                Toast.makeText(context, "Wähle zuerst eine Gemüsesorte aus!", Toast.LENGTH_SHORT)
+                    .show()
             }
-        }
     }
 
     //setzt Farben zurück auf Blau

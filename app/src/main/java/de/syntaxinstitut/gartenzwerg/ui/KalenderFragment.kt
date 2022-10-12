@@ -31,7 +31,7 @@ class KalenderFragment : Fragment() {
         }
     }
 
-    //Dropdownmenu
+    //Dropdownmenu mit Pflanzen aus der API
     override fun onResume() {
         super.onResume()
         viewModel.pflanzen.observe(
@@ -81,7 +81,7 @@ class KalenderFragment : Fragment() {
 
     //zeigt Aussaat_Monate Grün an
     private fun kalenderAussaat() {
-        //string zu int
+        //wenn kein Gemüse ausgewählt ist soll die Funktion nicht starten
         if (binding.autoCompleteKalender.text.toString() != "Gemüse-Sorten") {
 
 
@@ -98,16 +98,19 @@ class KalenderFragment : Fragment() {
 
             //geht durch aussaatstart und aussaatende (Api)
             for (i in aussaatstart - 1..aussaatende - 1) {
-                //ändert die Farben der Buttons/Monate
+                //ändert die Farben der Buttons/Monate zu grün
                 buttonList[i].setBackgroundColor(resources.getColor(R.color.clickedGreen))
             }
         } else {
+            //wenn auf Button geklickt wurde
+            // ohne Gemüse im Dropdown ausgewählt zu haben soll der Text erscheinen
             Toast.makeText(context, "Wähle zuerst eine Gemüsesorte aus!", Toast.LENGTH_SHORT).show()
         }
     }
 
     //zeigt Ernte_Monate Orange an
     private fun kalenderErnte() {
+        //wenn kein Gemüse ausgewählt ist soll die Funktion nicht starten
         if (binding.autoCompleteKalender.text.toString() != "Gemüse-Sorten") {
 
                 viewModel.aktuellePflanze = viewModel.pflanzen.value?.find {
@@ -122,10 +125,12 @@ class KalenderFragment : Fragment() {
 
                 //geht durch aussaatstart und aussaatende (Api)
                 for (i in ernteStart - 1..ernteEnde - 1) {
-                    //ändert die Farben der Buttons/Monate
+                    //ändert die Farben der Buttons/Monate zu orange
                     buttonList[i].setBackgroundColor(resources.getColor(R.color.orange))
                 }
             } else {
+            //wenn auf Button geklickt wurde
+            // ohne Gemüse im Dropdown ausgewählt zu haben soll der Text erscheinen
                 Toast.makeText(context, "Wähle zuerst eine Gemüsesorte aus!", Toast.LENGTH_SHORT)
                     .show()
             }

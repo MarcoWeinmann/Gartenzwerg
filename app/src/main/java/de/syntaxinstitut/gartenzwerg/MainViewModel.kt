@@ -7,7 +7,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import de.syntaxinstitut.gartenzwerg.data.local.getDatabase
-import de.syntaxinstitut.gartenzwerg.data.remote.Datasource
 import de.syntaxinstitut.gartenzwerg.data.models.Pflanzen
 import de.syntaxinstitut.gartenzwerg.data.remote.PflanzenApi
 import de.syntaxinstitut.gartenzwerg.data.remote.Repository
@@ -36,6 +35,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         loadData()
     }
 
+    //Lädt die Daten aus der API
     private fun loadData() {
         viewModelScope.launch {
             _loading.value = ApiStatus.LOADING

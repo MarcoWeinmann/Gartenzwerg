@@ -23,7 +23,7 @@ class SignUpFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // Inflatet das Layout für dieses Fragment
       binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sign_up, container, false)
 
         return binding.root
@@ -32,14 +32,17 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //Leitet User zurück zu Login
         binding.buttonCancelSignUp.setOnClickListener{
             findNavController().navigateUp()
         }
 
+        //Führt SignUp Funktion aus
         binding.buttonSignUp.setOnClickListener{
             signUp()
         }
 
+        //beobachtet currentUser und wenn der User in Firebase registriert ist, wird er weitergeleitet zum HomeFragment
         viewModel.currentUser.observe(
             viewLifecycleOwner,
             Observer {
@@ -52,6 +55,7 @@ class SignUpFragment : Fragment() {
 
     }
 
+    //Soll den User bei Firebase registrieren
     private fun signUp() {
         val email = binding.evEmail.text.toString()
         val password = binding.evPassword.text.toString()

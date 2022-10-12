@@ -44,7 +44,7 @@ class DetailFragment : Fragment() {
         savedInstanceState: Bundle?
 
     ): View? {
-        // Inflate the layout for this fragment
+        // Inflatet das Layout für dieses Fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail, container, false)
 
         return binding.root
@@ -61,22 +61,25 @@ class DetailFragment : Fragment() {
             Observer {list ->
                 val pflanzen = list.find {
                     it.id == veggieId
-                   // it.imageResource == detailBild
+
                 }
                 if (pflanzen != null){
                     binding.tvDetailText.text = pflanzen.text
                     binding.tvDetailName.text = pflanzen.name
                     binding.tvDetailMeter.text = pflanzen.pflanzenProQMeter.toString()
+
                 //Api
                     val imgUri = detailBild.toUri().buildUpon().scheme("https").build()
                     binding.ivDetail.load(imgUri)
 
+                    //wenn aussaatZeitStart gleich ist wie aussaatZeitEnde soll nur 1 davon angezeigt werden
                     if (pflanzen.aussaatZeitStart == pflanzen.aussaatZeitEnde){
                         binding.tvDetailAussaat.text = "${convertDate(pflanzen.aussaatZeitStart)}"
                     }else{
                         binding.tvDetailAussaat.text = "${convertDate(pflanzen.aussaatZeitStart)} - ${convertDate(pflanzen.aussaatZeitEnde)}"
                     }
 
+                    //wenn ernteZeitStart gleich ist wie ernteZeitEnde soll nur 1 davon angezeigt werden
                     if (pflanzen.ernteZeitStart == pflanzen.ernteZeitEnde){
                         binding.tvDetailErnte.text = "${convertDate(pflanzen.ernteZeitStart)}"
                     }else{
@@ -89,6 +92,7 @@ class DetailFragment : Fragment() {
 
     }
 
+    //Soll Int wieder zu String ändern (sieht besser aus in der Detailansicht)
     private fun convertDate(date: String) :String {
         when(date){
             "1"-> return "Jan"

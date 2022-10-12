@@ -24,7 +24,7 @@ class BeetFragment : Fragment() {
 
 
     }
-    //Dropdownmenu
+    //Dropdownmenu mit Pflanzen aus der API
     override fun onResume() {
         super.onResume()
         viewModel.pflanzen.observe(
@@ -46,15 +46,17 @@ class BeetFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        //Inflatet das Layout für dieses Fragment
         binding = FragmentBeetBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonBeetErstellen.setOnClickListener {
+
+            //wenn kein Gemüse ausgewählt ist soll die Funktion nicht starten
             if (binding.autoCompleteBeet.text.toString() != "Gemüse-Sorten") {
 
                 val pflanzenString = binding.autoCompleteBeet.text
@@ -71,10 +73,12 @@ class BeetFragment : Fragment() {
                     )
                     binding.tvErgebniss.text = ergebnis.toString()
                 }else {
+                    //wenn keine Angaben zu Länge und Breite gemacht wurden soll bei klick auf den button der Text erscheinen
                     Toast.makeText(context, "Gebe Länge und Breite deines Beets ein.", Toast.LENGTH_SHORT).show()
                 }
 
             }else {
+                //wenn keine Gemüse-Sorte ausgewählt ist soll bei klick auf den Button der Text erscheinen
                 Toast.makeText(context, "Wähle zuerst eine Gemüsesorte aus!", Toast.LENGTH_SHORT)
                     .show()
             }

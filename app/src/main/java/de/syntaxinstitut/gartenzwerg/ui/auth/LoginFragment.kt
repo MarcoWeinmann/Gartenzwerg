@@ -33,7 +33,7 @@ class LoginFragment : Fragment() {
 
 
 
-        // Inflate the layout for this fragment
+        // Inflatet das Layout für diese Klasse
   binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
 
         return binding.root
@@ -43,11 +43,12 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        //User wird zu SignUp Fragment weitergeleitet
         binding.SignUpButton1.setOnClickListener{
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToSignUpFragment())
         }
 
+        //User wird eingeloggt
         binding.buttonLogin.setOnClickListener{
             val email = binding.evEmailLogin.text.toString()
             val password = binding.evPasswordLogin.text.toString()
@@ -57,6 +58,7 @@ class LoginFragment : Fragment() {
             }
         }
 
+        //beobachtet currentUser und wenn der User in Firebase registriert ist, wird er weitergeleitet zum HomeFragment
         viewmodel.currentUser.observe(
             viewLifecycleOwner,
             Observer {

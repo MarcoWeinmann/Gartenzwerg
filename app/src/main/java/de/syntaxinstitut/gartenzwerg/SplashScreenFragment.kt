@@ -34,7 +34,7 @@ class SplashScreenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        // Inflate the layout for this fragment
+        // Inflatet das Layout für das Fragment
         binding = FragmentSplashScreenBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -48,6 +48,7 @@ class SplashScreenFragment : Fragment() {
         fadeAnimation()
         Handler().postDelayed({
 
+            //Navigiert mit Delay von Splashscreen zu LoginFragment
             findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToLoginFragment())
         }, 3000)
     }

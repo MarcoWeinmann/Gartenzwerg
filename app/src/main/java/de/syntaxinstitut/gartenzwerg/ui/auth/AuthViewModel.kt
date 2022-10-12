@@ -10,15 +10,17 @@ import com.google.firebase.auth.FirebaseUser
 
 const val TAG = "AUTHVIEWMODEL"
 
-
+//Diese Klasse ist für die Authethication zuständig
 class AuthViewModel (application: Application): AndroidViewModel(application) {
 
     private val firebaseAuth = FirebaseAuth.getInstance()
 
+    //LiveData für den aktuellen User
     private val _currentUser = MutableLiveData<FirebaseUser?>(firebaseAuth.currentUser)
     val currentUser: LiveData<FirebaseUser?>
     get() = _currentUser
 
+    //Soll den User über Firebase registrieren
     fun signUp(email: String, password: String) {
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
             if (it.isSuccessful) {
@@ -29,6 +31,7 @@ class AuthViewModel (application: Application): AndroidViewModel(application) {
         }
     }
 
+    //Soll User einloggen
     fun login(email: String, password: String) {
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
             if (it.isSuccessful) {
@@ -39,6 +42,7 @@ class AuthViewModel (application: Application): AndroidViewModel(application) {
         }
     }
 
+    //Soll User ausloggen
     fun logout() {
         firebaseAuth.signOut()
         _currentUser.value = firebaseAuth.currentUser

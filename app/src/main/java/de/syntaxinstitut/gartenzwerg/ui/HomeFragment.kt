@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -18,11 +19,8 @@ import de.syntaxinstitut.gartenzwerg.ui.auth.AuthViewModel
 
 class HomeFragment : Fragment() {
 
-
-    /** Bindet das XML-View mit der Klasse um auf die Elemente zugreifen zu können */
     private lateinit var binding: FragmentHomeBinding
 
-    /** Das ViewModel zu diesem Fragment */
     private val viewModel: MainViewModel by activityViewModels()
     private val authviewmodel: AuthViewModel by activityViewModels()
 
@@ -50,15 +48,16 @@ class HomeFragment : Fragment() {
 
         binding.rvVeggie.adapter = pflanzenAdapter
 
+        //die Variable aus dem Viewmodel wird beobachtet
         viewModel.pflanzen.observe(
             viewLifecycleOwner,
             Observer {
                 pflanzenAdapter.submitList(it)
-              //  binding.rvVeggie.adapter = AdapterHome(it, requireContext())
-
             }
         )
 
+        //Die Variable aus dem authViewmodel wird beobachtet
+        // und wenn sie null ist wird man zum LoginFragment geleitet
         authviewmodel.currentUser.observe(
             viewLifecycleOwner,
             Observer {
@@ -68,7 +67,10 @@ class HomeFragment : Fragment() {
             }
         )
 
+        //bei klick auf den Logout button wird man ausgeloggt
+        // und zum LoginFragment weitergeleitet
         binding.buttonLogOutHome.setOnClickListener {
+            Toast.makeText(context, "Sie wurden erfolgreich ausgeloggt.", Toast.LENGTH_SHORT).show()
             authviewmodel.logout()
         }
     }

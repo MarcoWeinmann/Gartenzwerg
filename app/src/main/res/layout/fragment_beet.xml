@@ -243,7 +243,7 @@
                         android:id="@+id/tvErgebniss"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="60dp"
+                        android:layout_marginEnd="50dp"
                         android:text="20"
                         android:textColor="@color/black"
                         android:textSize="20sp"

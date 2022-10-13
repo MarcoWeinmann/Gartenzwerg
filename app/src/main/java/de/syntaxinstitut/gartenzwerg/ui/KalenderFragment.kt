@@ -85,11 +85,13 @@ class KalenderFragment : Fragment() {
         if (binding.autoCompleteKalender.text.toString() != "Gemüse-Sorten") {
 
 
+            //vergleicht aktuellePflanze mit der im Dropdown ausgewählten Pflanze
             viewModel.aktuellePflanze = viewModel.pflanzen.value?.find {
                 it.name == binding.autoCompleteKalender.text
                     .toString()
             }!!
 
+            //holt die Aussaatzeiten vom Viewmodel
             val aussaatstart = viewModel.aktuellePflanze.aussaatZeitStart.toInt()
             val aussaatende = viewModel.aktuellePflanze.aussaatZeitEnde.toInt()
 
@@ -113,10 +115,12 @@ class KalenderFragment : Fragment() {
         //wenn kein Gemüse ausgewählt ist soll die Funktion nicht starten
         if (binding.autoCompleteKalender.text.toString() != "Gemüse-Sorten") {
 
+            //vergleicht aktuellePflanze mit der im Dropdown ausgewählten Pflanze
                 viewModel.aktuellePflanze = viewModel.pflanzen.value?.find {
                     it.name == binding.autoCompleteKalender.text
                         .toString()
                 }!!
+            //holt die Erntezeiten vom Viewmodel
                 val ernteStart = viewModel.aktuellePflanze.ernteZeitStart.toInt()
                 val ernteEnde = viewModel.aktuellePflanze.ernteZeitEnde.toInt()
 
@@ -136,7 +140,7 @@ class KalenderFragment : Fragment() {
             }
     }
 
-    //setzt Farben zurück auf Blau
+    //setzt alle Farben zurück auf Blau
     fun kalenderReset(buttonList: MutableList<Button>) {
         for (button in buttonList) {
             button.setBackgroundColor(resources.getColor(R.color.kalenderblau))
@@ -150,7 +154,7 @@ class KalenderFragment : Fragment() {
 
         binding = FragmentKalenderBinding.inflate(inflater, container, false)
 
-        // Inflate the layout for this fragment
+        // Inflatet da Layout für dieses Fragment
         return binding.root
     }
 }

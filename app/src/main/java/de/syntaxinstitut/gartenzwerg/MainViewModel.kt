@@ -19,7 +19,10 @@ enum class ApiStatus { LOADING, ERROR, DONE }
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
+    //Datenbank
     private val database = getDatabase(application)
+
+    //API
     private val repository = Repository(PflanzenApi, database)
 
     lateinit var aktuellePflanze: Pflanzen

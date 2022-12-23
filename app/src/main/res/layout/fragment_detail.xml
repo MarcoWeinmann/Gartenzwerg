@@ -148,7 +148,7 @@
                                 android:layout_marginTop="2dp"
                                 android:text="Saatzeit:"
                                 android:textColor="@color/black"
-                                android:textSize="20sp"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
                         </com.google.android.material.card.MaterialCardView>
 
@@ -179,7 +179,7 @@
                                     android:layout_marginTop="2dp"
                                     android:text="Erntezeit:"
                                     android:textColor="@color/black"
-                                    android:textSize="20sp"
+                                    android:textSize="18sp"
                                     android:textStyle="bold"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
@@ -242,7 +242,7 @@
                                     android:layout_marginTop="2dp"
                                     android:text="Pflanzen/m2:"
                                     android:textColor="@color/black"
-                                    android:textSize="20sp"
+                                    android:textSize="18sp"
                                     android:textStyle="bold"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
